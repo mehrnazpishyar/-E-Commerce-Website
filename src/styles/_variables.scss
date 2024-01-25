@@ -1,0 +1,26 @@
+
+// COLORS
+
+    $color-black: #374151;
+    $color-gray: #64748b;
+    $color-white: #fff;
+    $color-purple: #4338ca;
+    $color-yellow:#fdeb43;
+    $color-blue:#04bad2;
+
+
+// BORDERS
+
+   
+    $border-1: 1px solid  $color-gray ;
+    $border-2: 2px solid $color-yellow;
+    $border-radius-50:50px;
+
+  
+// SIMILAR CODES
+
+   %align-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   } 
