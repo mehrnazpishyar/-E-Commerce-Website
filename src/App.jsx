@@ -1,12 +1,12 @@
 
 import Header from "./components/Header/Header";
 import Slider from "./components/Slider/Slider";
-import Main from "./components/Main/Main";
 import Info from "./components/Info/Info";
 import Testimonial from "./components/Testimonial/Testimonial";
 import FAQ from "./components/FAQ/FAQ";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
+import Products from './components/Products/Products'
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <Navbar />
       <Header />
       <Slider />
-      <Main />
+      <Products/>
       <Info />
       <Testimonial />
       <FAQ />

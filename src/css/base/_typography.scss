@@ -1,0 +1,38 @@
+@import '../abstracts/variables';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $color-blue-dark;
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.4;
+}
+
+h2 {
+  font-size: 2.75rem;
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: 2.25rem;
+}
+
+h4 {
+  font-size: 1.65rem;
+}
+
+p {
+  font-size: 1.20rem;
+  margin-bottom: 1.25rem;
+}
+.small {
+  font-size: .95rem;
+}
+

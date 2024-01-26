@@ -2,17 +2,19 @@
 // COLORS
 
     $color-black: #374151;
-    $color-gray: #64748b;
+    $color-gray-light:#dddddd;
+    $color-gray-dark: #64748b;
     $color-white: #fff;
     $color-purple: #4338ca;
     $color-yellow:#fdeb43;
     $color-blue:#04bad2;
+    $color-blue-dark:#0A2463;
 
 
 // BORDERS
 
    
-    $border-1: 1px solid  $color-gray ;
+    $border-1: 1px solid  $color-gray-dark ;
     $border-2: 2px solid $color-yellow;
     $border-radius-50:50px;
 

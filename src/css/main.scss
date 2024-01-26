@@ -1,0 +1,28 @@
+//Table of contents
+//------------------------
+
+
+//base imports
+@use './base/reset';
+@use './base/typography';
+
+// abstracts import
+@use './abstracts/variables';
+
+
+//layout imports
+@use './layout/header';
+@use './layout/footer';
+
+
+//components import
+@use './components/navbar';
+@use './components/menu';
+@use './components/slider';
+@use './components/products';
+@use './components/info';
+@use './components/testimonial';
+@use './components/faq';
+
+
+
