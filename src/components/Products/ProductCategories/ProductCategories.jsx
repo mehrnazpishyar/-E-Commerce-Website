@@ -1,11 +1,11 @@
-import { categoryData } from "../../constants";
+import { categoryData } from "../../../constants";
 import CategoriesCard from "./CategoriesCard";
 
-const Categories = () => {
+const ProductCategories = () => {
   return (
     <div className="categories">
       <div className="title">
-        <h2>Categories</h2>
+        <h2>Products</h2>
       </div>
       <div className="categories-container container">
         {categoryData.map((category) => (
@@ -16,4 +16,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default ProductCategories;

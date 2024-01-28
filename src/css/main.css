@@ -202,7 +202,7 @@ p {
 }
 .tn-container .bn-container .navlist a {
   font-weight: 600;
-  color: #374151;
+  color: #000;
 }
 .tn-container .bn-container .navlist a:hover {
   color: #4338ca;
@@ -246,16 +246,16 @@ p {
 }
 .slider-container .prev,
 .slider-container .next {
-  color: #374151;
+  color: #000;
 }
 .slider-container .prev:hover,
 .slider-container .next:hover {
   color: #fff;
-  background-color: #374151;
+  background-color: #000;
   transition: all 0.5s ease-in;
 }
 .slider-container .dot {
-  background-color: #374151;
+  background-color: #000;
 }
 .slider-container .dot:hover {
   background-color: #dddddd;
@@ -349,7 +349,7 @@ p {
 }
 
 .play-pause {
-  color: #374151;
+  color: #000;
 }
 
 .categories .title {
@@ -361,10 +361,85 @@ p {
   justify-content: space-around;
   text-align: center;
 }
-.categories .categories-card {
-  cursor: pointer;
-}
 .categories img {
   width: 100%;
   height: 150px;
+}
+
+.products-filter {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.dropdown {
+  width: 300px;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.dropdown .dropdown-btn {
+  padding: 15px 20px;
+  background-color: #04bad2;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 30px;
+  text-align: center;
+}
+.dropdown .dropdown-content {
+  position: absolute;
+  top: 110%;
+  padding: 15px;
+  background-color: #04bad2;
+  font-weight: 500;
+  color: #000;
+  width: 100%;
+  border-radius: 30px;
+  text-align: center;
+  z-index: 1;
+}
+.dropdown .dropdown-content .dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.dropdown .dropdown-content .dropdown-item:hover {
+  background-color: #fdeb43;
+  border-radius: 30px;
+}
+
+.products .title {
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 40px;
+}
+
+.shop-container {
+  position: relative;
+  margin-top: 30px;
+}
+.shop-container .product-cart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-card {
+  width: 300px;
+  text-align: center;
+  padding: 1rem;
+  margin: auto;
+  border: 2px solid #04bad2;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s;
+  border-radius: 10px;
+}
+.item-card img {
+  width: 100%;
+  max-width: 15rem;
 }/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,37 @@
+@import '../abstracts/variables';
+
+.products {
+    .title {
+      text-align: center;
+      margin-top: 150px;
+      margin-bottom: 40px;
+    }
+  }
+  
+  .shop-container {
+    position: relative;
+    margin-top: 30px;
+  
+    .product-cart {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  
+  .item-card {
+    width: 300px;
+    text-align: center;
+    padding: 1rem;
+    margin: auto;
+    border: 2px solid $color-blue;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.2s;
+    border-radius: 10px;
+  
+    img {
+      width: 100%;
+      max-width: 15rem;
+    }
+  }
+  
