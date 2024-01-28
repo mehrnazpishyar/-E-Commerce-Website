@@ -1,8 +1,10 @@
-import './Products'
+import Categories from "./Categories"
+
+
 const Products = () => {
   return (
-    <div className='product'>
-   products
+    <div>
+      <Categories/>
     </div>
   )
 }

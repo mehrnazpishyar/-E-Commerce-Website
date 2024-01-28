@@ -1,0 +1,23 @@
+@import "../abstracts//variables";
+
+.categories {
+  .title {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .categories-container {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  .categories-card {
+    cursor: pointer;
+  }
+
+  img {
+    width: 100%;
+    height: 150px;
+  }
+}

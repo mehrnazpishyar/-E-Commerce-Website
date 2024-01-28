@@ -1,5 +1,5 @@
 
-import Header from "./components/Header/Header";
+// import Header from "./components/Header/Header";
 import Slider from "./components/Slider/Slider";
 import Info from "./components/Info/Info";
 import Testimonial from "./components/Testimonial/Testimonial";
@@ -10,16 +10,16 @@ import Products from './components/Products/Products'
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
-      <Header />
+      {/* <Header /> */}
       <Slider />
       <Products/>
-      <Info />
+      {/* <Info />
       <Testimonial />
       <FAQ />
-      <Footer />
-    </div>
+      <Footer /> */}
+    </>
   );
 }
 

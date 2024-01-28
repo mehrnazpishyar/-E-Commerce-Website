@@ -47,7 +47,6 @@ const Navbar = () => {
             <GiHamburgerMenu />
           </div>
         </div>
-        <hr />
       </nav>
     </header>
   );
