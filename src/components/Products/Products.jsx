@@ -1,7 +1,9 @@
 import './Products'
 const Products = () => {
   return (
-    <div>Main</div>
+    <div className='product'>
+   products
+    </div>
   )
 }
 
