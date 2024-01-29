@@ -15,10 +15,10 @@ function App() {
       {/* <Header /> */}
       <Slider />
       <Products/>
-      {/* <Info />
+      <Info />
       <Testimonial />
       <FAQ />
-      <Footer /> */}
+      <Footer />
     </>
   );
 }

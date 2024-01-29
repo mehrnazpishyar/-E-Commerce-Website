@@ -15,7 +15,7 @@
     padding: 15px 20px;
     background-color: $color-blue;
     font-weight: bold;
-    color: black;
+    color: $color-white;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -31,7 +31,7 @@
     padding: 15px;
     background-color: $color-blue;
     font-weight: 500;
-    color: $color-black;
+    color: $color-white;
     width: 100%;
     border-radius: 30px;
     text-align: center;

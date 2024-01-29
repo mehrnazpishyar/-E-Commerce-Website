@@ -6,16 +6,17 @@ const Products = () => {
   return (
     <div className="products">
       <ProductCategories />
-
+      <hr />
       <div className="title">
         <h2>ALL PRODUCTS</h2>
       </div>
-      
+
       <ProductsFilter />
 
       <selection className="shop">
         <div className="shop-container">
           <div className="product-cart">
+            <ProductsCart />
             <ProductsCart />
             <ProductsCart />
             <ProductsCart />

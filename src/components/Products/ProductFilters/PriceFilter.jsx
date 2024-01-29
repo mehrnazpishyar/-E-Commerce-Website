@@ -6,7 +6,7 @@ const PriceFilter = () => {
   return (
     <div className="dropdown">
       <div className="dropdown-btn" onClick={(e) => setIsActive(!isActive)}>
-        Filter by price
+        Filter by Price
         <span>
           <IoMdArrowDropdown />
         </span>
