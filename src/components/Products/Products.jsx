@@ -13,7 +13,7 @@ const Products = () => {
 
       <ProductsFilter />
 
-      <selection className="shop">
+      <div className="shop">
         <div className="shop-container">
           <div className="product-cart">
             <ProductsCart />
@@ -22,7 +22,7 @@ const Products = () => {
             <ProductsCart />
           </div>
         </div>
-      </selection>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,76 @@
+// _accordion.scss
+
+@import "../abstracts/variables";
+
+.accordion {
+  .title {
+    color: $color-purple;
+    font-weight: 700;
+    padding: 4rem;
+    text-align: center;
+  }
+
+  .flex {
+    display: flex;
+    justify-content: center;
+  }
+
+  .secContainer {
+    .single-container {
+      width: 100%;
+      max-width: 500px;
+      margin-top: 10px;
+      cursor: pointer;
+
+      .heading {
+        display: flex;
+        font-size: 0.95rem;
+        align-items: center;
+        padding: 1rem;
+        border-radius: 10px;
+        justify-content: space-between;
+        background-color: $color-yellow;
+
+        .headingIcon {
+          cursor: pointer;
+          z-index: 100;
+
+          .icon {
+            font-size: 1.3rem;
+            cursor: pointer;
+            color: $color-black;
+            transition: all 0.5s ease;
+          }
+
+          .rotate {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+
+    .description {
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      line-height: 23px;
+      white-space: pre-line;
+      height: 0;
+      opacity: 0;
+      padding: 0 1rem;
+      color: $color-black;
+      border-radius: 0 0 10px 10px;
+      background-color: $color-blue;
+    }
+
+    .show {
+      height: 140px;
+      opacity: 1;
+    }
+
+    // .activeTitle {
+    //   background-color: $color-purple;
+    //   border-radius: 10px 10px 0 0;
+    // }
+  }
+}

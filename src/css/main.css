@@ -105,6 +105,88 @@ p {
   justify-content: center;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul {
+  list-style: none;
+}
+
+.footer {
+  background-color: #24262b;
+  padding: 70px 0;
+}
+
+.footer-col {
+  width: 25%;
+  padding: 0 15px;
+}
+.footer-col h4 {
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.footer-col h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #ffe600;
+  height: 2px;
+  box-sizing: border-box;
+  width: 110px;
+}
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footer-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+/* responsive */
+@media (max-width: 767px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 574px) {
+  .footer-col {
+    width: 100%;
+  }
+}
 .tn-container {
   display: flex;
   align-items: center;
@@ -124,7 +206,7 @@ p {
 .tn-container .search-box {
   position: relative;
   width: 555px;
-  border: 2px solid #fdeb43;
+  border: 2px solid #ffe600;
   padding: 0.5rem 1rem;
   border-radius: 50px;
   margin-left: 50px;
@@ -151,7 +233,7 @@ p {
   right: 0;
   transform: scale(0.9);
   border-radius: 50px;
-  background-color: #fdeb43;
+  background-color: #ffe600;
 }
 .tn-container .search-box .search-icon .srch {
   position: absolute;
@@ -178,7 +260,7 @@ p {
 }
 .tn-container .tn-icons .fav-icon:hover,
 .tn-container .tn-icons .cart-icon:hover {
-  color: #fdeb43;
+  color: #ffe600;
 }
 .tn-container .tn-icons .count {
   position: absolute;
@@ -206,7 +288,7 @@ p {
 }
 .tn-container .bn-container .navlist a:hover {
   color: #4338ca;
-  border-bottom: 3px solid #fdeb43;
+  border-bottom: 3px solid #ffe600;
 }
 .tn-container .bn-container .navlist a:hover::after {
   width: 100%;
@@ -215,7 +297,7 @@ p {
   .tn-container .bn-container ul {
     position: fixed;
     top: 69px;
-    background-color: #fdeb43;
+    background-color: #ffe600;
     height: calc(100vh - 100px);
     width: 50%;
     flex-direction: column;
@@ -408,8 +490,9 @@ p {
   transition: all 0.2s;
 }
 .dropdown .dropdown-content .dropdown-item:hover {
-  background-color: #fdeb43;
+  background-color: #ffe600;
   border-radius: 30px;
+  color: #4338ca;
 }
 
 .products .title {
@@ -473,7 +556,7 @@ p {
   font-size: 1rem;
 }
 .item-card .rating a {
-  color: #fdeb43;
+  color: #ffe600;
 }
 .item-card .card-buttons {
   display: flex;
@@ -491,7 +574,7 @@ p {
   border-radius: 10px;
 }
 .item-card .card-buttons .btn:hover {
-  background-color: #fdeb43;
+  background-color: #ffe600;
   color: #4338ca;
 }
 .item-card .card-icons {
@@ -509,14 +592,14 @@ p {
   color: #fff;
   padding: 0.4rem;
   line-height: 1;
-  border: 1px solid #fdeb43;
+  border: 1px solid #ffe600;
   border-radius: 10px;
   border-color: #04bad2;
   background: #04bad2;
 }
 .item-card .card-icons a:hover {
-  border-color: #fdeb43;
-  background: #fdeb43;
+  border-color: #ffe600;
+  background: #ffe600;
 }
 .item-card:hover .card-icons {
   transform: translateX(0);
@@ -600,4 +683,60 @@ p {
   100% {
     opacity: 1;
   }
+}
+
+.accordion .title {
+  color: #4338ca;
+  font-weight: 700;
+  padding: 4rem;
+  text-align: center;
+}
+.accordion .flex {
+  display: flex;
+  justify-content: center;
+}
+.accordion .secContainer .single-container {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.accordion .secContainer .single-container .heading {
+  display: flex;
+  font-size: 0.95rem;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 10px;
+  justify-content: space-between;
+  background-color: #ffe600;
+}
+.accordion .secContainer .single-container .heading .headingIcon {
+  cursor: pointer;
+  z-index: 100;
+}
+.accordion .secContainer .single-container .heading .headingIcon .icon {
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #000;
+  transition: all 0.5s ease;
+}
+.accordion .secContainer .single-container .heading .headingIcon .rotate {
+  transform: rotate(180deg);
+}
+.accordion .secContainer .description {
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  line-height: 23px;
+  white-space: pre-line;
+  height: 0;
+  opacity: 0;
+  padding: 0 1rem;
+  color: #000;
+  border-radius: 0 0 10px 10px;
+  background-color: #04bad2;
+}
+.accordion .secContainer .show {
+  height: 140px;
+  opacity: 1;
 }/*# sourceMappingURL=main.css.map */

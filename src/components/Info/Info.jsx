@@ -65,7 +65,7 @@ const Info = () => {
   }, []);
 
   return (
-    <div className="info-section">
+    <div className="info-section container">
       <h2 className={`title ${topToBottom ? "topToBottom" : ""}`}>
         product information
       </h2>
