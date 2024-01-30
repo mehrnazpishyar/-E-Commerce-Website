@@ -6,7 +6,7 @@
   .title {
     color: $color-purple;
     font-weight: 700;
-    padding: 4rem;
+    padding-top: 5rem;
     text-align: center;
   }
 
@@ -68,9 +68,9 @@
       opacity: 1;
     }
 
-    // .activeTitle {
-    //   background-color: $color-purple;
-    //   border-radius: 10px 10px 0 0;
-    // }
+    .activeTitle {
+      background-color: $color-purple;
+      border-radius: 10px 10px 0 0;
+    }
   }
 }

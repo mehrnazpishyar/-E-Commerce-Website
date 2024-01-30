@@ -11,8 +11,10 @@
   overflow: hidden;
 
   h2{
+    margin-bottom: 60px;
     text-align: center;
     transform: translateY(-200%);
+    color: $color-black;
 
     &.topToBottom{
         opacity: 1;
@@ -32,7 +34,8 @@
     transition: .8s all ease;
 
     img {
-      width: 50%;
+      width: 80%;
+      border-radius: 10px;
     }
 
     &.leftToRight {
@@ -54,7 +57,6 @@
 
     p {
       margin-top: 1rem;
-      text-align: justify;
       color: $color-purple;
     }
 

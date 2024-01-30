@@ -8,7 +8,7 @@ const Products = () => {
       <ProductCategories />
       <hr />
       <div className="title">
-        <h2>ALL PRODUCTS</h2>
+        <h2>All Products</h2>
       </div>
 
       <ProductsFilter />

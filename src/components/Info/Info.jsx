@@ -1,4 +1,4 @@
-import pic from "../../../public/woman.png";
+import pic from "../../../public/online.jpg";
 import { useEffect, useState } from "react";
 
 const Info = () => {
@@ -74,11 +74,9 @@ const Info = () => {
           <img src={pic} alt="" />
         </div>
         <div className={`right ${rightToLeft ? "rightToLeft" : ""}`}>
-          <h3>produccccct</h3>
+          <h3>Welcome to our Online Shop!</h3>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
-            itaque, nulla sit rem tempora inventore cumque tenetur quis deleniti
-            aut?
+          Your Ultimate Online Shopping Destination. At our Online Shop, we bring you a curated selection of high-quality products that combine style, functionality, and affordability. Our online store is your one-stop destination for all your needs, offering a diverse range of products that cater to different tastes and preferences.
           </p>
         </div>
       </div>
