@@ -103,7 +103,7 @@ ul {
   padding: 0;
 }
 
-.tn-container .search-box, .tn-container .bn-container {
+.tn-container .search-box {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,7 +193,8 @@ footer .footer-col .social-links a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0 0.5rem 0;
+  border-bottom: 1px solid #dddddd;
 }
 .tn-container .logo {
   font-size: 1.5rem;
@@ -207,7 +208,7 @@ footer .footer-col .social-links a:hover {
 }
 .tn-container .search-box {
   position: relative;
-  width: 555px;
+  width: 450px;
   border: 2px solid #ffe600;
   padding: 0.5rem 1rem;
   border-radius: 50px;
@@ -274,42 +275,39 @@ footer .footer-col .social-links a:hover {
   padding: 2px 4px;
   border-radius: 3px;
 }
-.tn-container .bn-container {
-  flex: 1;
-}
-.tn-container .bn-container .navlist {
+.tn-container .tn-icons .cart-user {
   display: flex;
-  gap: 2.5rem;
-  text-transform: capitalize;
-  z-index: 111;
-  pad: 0.5rem 0;
-}
-.tn-container .bn-container .navlist a {
-  font-weight: 600;
-  color: #000;
-}
-.tn-container .bn-container .navlist a:hover {
   color: #4338ca;
-  border-bottom: 3px solid #ffe600;
+  font-size: 1.3rem;
+  font-weight: 500;
 }
-.tn-container .bn-container .navlist a:hover::after {
-  width: 100%;
-}
-@media (max-width: 768px) {
-  .tn-container .bn-container ul {
-    position: fixed;
-    top: 69px;
-    background-color: #ffe600;
-    height: calc(100vh - 100px);
-    width: 50%;
-    flex-direction: column;
-    align-items: center;
-    transition: right 0.5s linear;
-  }
+.tn-container .tn-icons .cart-user .user {
+  margin-left: 5px;
+  font-size: 15px;
 }
 .tn-container .hamburger-menu {
   font-size: 2.5rem;
   display: none;
+}
+.tn-container .favorite .tooltiptext, .tn-container .cart .tooltiptext, .tn-container .login .tooltiptext, .tn-container .logout .tooltiptext {
+  font-size: 14px;
+  visibility: hidden;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #04bad2;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -100%;
+  left: 50%;
+  margin-left: -20px;
+}
+.tn-container .favorite:hover .tooltiptext, .tn-container .cart:hover .tooltiptext, .tn-container .login:hover .tooltiptext, .tn-container .logout:hover .tooltiptext {
+  visibility: visible;
 }
 @media (max-width: 768px) {
   .tn-container .hamburger-menu {
@@ -318,6 +316,45 @@ footer .footer-col .social-links a:hover {
     color: #4338ca;
     width: 100px;
     text-align: center;
+  }
+}
+
+.bn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bn-container {
+  flex: 1;
+}
+.bn-container .navlist {
+  display: flex;
+  gap: 2.5rem;
+  text-transform: capitalize;
+  z-index: 111;
+}
+.bn-container .navlist a {
+  font-weight: 600;
+  color: #000;
+}
+.bn-container .navlist a:hover {
+  color: #4338ca;
+  border-bottom: 3px solid #ffe600;
+}
+.bn-container .navlist a:hover::after {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .bn-container ul {
+    position: fixed;
+    top: 69px;
+    background-color: #ffe600;
+    height: calc(100vh - 100px);
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    transition: right 0.5s linear;
   }
 }
 
@@ -368,23 +405,6 @@ footer .footer-col .social-links a:hover {
   position: absolute;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.slide-title,
-.slide-text {
-  width: 100%;
-  height: 100%;
-  color: #fff;
-  font-size: 50px;
-  position: absolute;
-  text-align: center;
-  top: 40%;
-  z-index: 10;
-}
-.slide-title.slide-text,
-.slide-text.slide-text {
-  top: 65%;
-  font-size: 2rem;
 }
 
 .prev,
@@ -474,7 +494,7 @@ footer .footer-col .social-links a:hover {
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  border-radius: 30px;
+  border-radius: 10px;
   text-align: center;
 }
 .dropdown .dropdown-content {
@@ -485,7 +505,7 @@ footer .footer-col .social-links a:hover {
   font-weight: 500;
   color: #fff;
   width: 100%;
-  border-radius: 30px;
+  border-radius: 10px;
   text-align: center;
   z-index: 1;
 }

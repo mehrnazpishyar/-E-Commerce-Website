@@ -1,8 +1,14 @@
 import { FaSearch } from "react-icons/fa";
 import { RiHeartFill, RiShoppingCartFill } from "react-icons/ri";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { MdOutlineLogin,MdLogout } from "react-icons/md";
+import { Link } from "react-router-dom";
+import Menu from "../Menu/Menu";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
+  const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
+
   return (
     <header>
       <nav className="container">
@@ -21,27 +27,43 @@ const Navbar = () => {
               <FaSearch className="srch" />
             </div>
           </div>
-          <div className="bn-container">
-            <ul className="navlist">
-              <li>
-                <a href="#home">Home</a>
-              </li>
-              <li>
-                <a href="#all">AllProducts</a>
-              </li>
-              <li>
-                <a href="download">Download</a>
-              </li>
-            </ul>
-          </div>
+          <Menu />
           <div className="tn-icons">
-            <a href="" className="fav-icon">
-              <RiHeartFill /> <span className="count">0</span>
-            </a>
-            <a href="" className="cart-icon">
-              <RiShoppingCartFill />
-              <span className="count">0</span>
-            </a>
+            <Link to="/favorite" className="fav-icon favorite">
+              <RiHeartFill /> <span className="count">0</span><span className="tooltiptext">favorite</span>
+            </Link>
+            <Link to="/cart" className="fav-icon cart">
+              <RiShoppingCartFill /> <span className="count">0</span>
+              <span className="tooltiptext">cart</span>
+            </Link>
+         
+          
+            {isAuthenticated ? (
+              <Link
+                to="/user"
+                className="cart-icon logout"
+                onClick={() =>
+                  logout({ logoutParams: { returnTo: window.location.origin } })
+                }
+              >
+                <MdLogout /><span className="tooltiptext">logout</span>
+              </Link>
+            ) : (
+              <Link
+                to="/user"
+                className="cart-icon login"
+                onClick={() => loginWithRedirect()}
+              >
+                <MdOutlineLogin /><span className="tooltiptext">login</span>
+              </Link>
+            )}
+               {
+               isAuthenticated && (
+                  <div className="cart-user">
+                <span className="user">Hello, {user.name}</span>
+                </div>
+              )
+            }
           </div>
           <div className="hamburger-menu">
             <GiHamburgerMenu />
