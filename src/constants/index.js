@@ -1,4 +1,7 @@
-
+import { FaTruck} from "react-icons/fa";
+import { AiFillDollarCircle } from "react-icons/ai";
+import { RiHeadphoneFill } from "react-icons/ri";
+import { FaPercent } from "react-icons/fa6";
 
 export const categoryData=[
     {
@@ -43,3 +46,26 @@ export const FAQ =[
         description:"Once an order is confirmed, the shipping address cannot be changed. Please make sure to enter the correct address during the checkout process to avoid any delivery issues.",
     }
 ]
+
+export const benefits = [
+    {
+        icon: FaTruck,
+        title:"Free Shiping",
+        description: "Oder above $1000"
+    },
+    {
+        icon: AiFillDollarCircle,
+        title:"Return & Refund",
+        description: "Money Back Gaurenty"
+    },
+    {
+        icon: FaPercent,
+        title:"Member Discount",
+        description: "On every Order"
+    },
+    {
+        icon:RiHeadphoneFill,
+        title:"Customer Support",
+        description: "Every Time Call Support"
+    },
+] 

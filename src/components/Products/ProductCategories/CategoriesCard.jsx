@@ -3,7 +3,9 @@
 const CategoriesCard = ({imgURL, title}) => {
   return (
     <div className="categories-card">
-      <img src={imgURL} alt="" />
+      <div className="img-box">
+      <img src={imgURL} alt="product" />
+      </div>
       <h4>{title}</h4>
     </div>
   );
