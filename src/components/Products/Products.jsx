@@ -17,15 +17,15 @@ const Products = () => {
       </div>
       <ProductsFilter />
       <div className="shop-container">
-          <div className="product-cart">
-              {isLoading ? (
-                <Loader />
-              ) : (
-                allproducts.map((item) => (
-                  <ProductsItems key={item.id} item={item} />
-                ))
-              )}
-          </div>
+        <div className="product-cart">
+          {isLoading ? (
+            <Loader />
+          ) : (
+            allproducts.map((item) => (
+              <ProductsItems key={item.id} item={item} />
+            ))
+          )}
+        </div>
       </div>
     </div>
   );
