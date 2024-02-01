@@ -1,27 +1,31 @@
 import ProductCategories from "./ProductCategories/ProductCategories";
 import ProductsFilter from "./ProductFilters/ProductsFilter";
-import ProductsCart from "./ProductsCart";
+import { useContext } from "react";
+import { AppContext } from "../context/AppProvider";
+import Loader from "../Loader/Loader";
+import ProductsItems from "./ProductsItems";
 
 const Products = () => {
+  const { isLoading, allproducts } = useContext(AppContext);
+
   return (
     <div className="products">
       <ProductCategories />
       <hr />
       <div className="title">
-        <h2>All Products</h2>
+        <h1>All Products</h1>
       </div>
-
       <ProductsFilter />
-
-      <div className="shop">
-        <div className="shop-container">
+      <div className="shop-container">
           <div className="product-cart">
-            <ProductsCart />
-            <ProductsCart />
-            <ProductsCart />
-            <ProductsCart />
+              {isLoading ? (
+                <Loader />
+              ) : (
+                allproducts.map((item) => (
+                  <ProductsItems key={item.id} item={item} />
+                ))
+              )}
           </div>
-        </div>
       </div>
     </div>
   );

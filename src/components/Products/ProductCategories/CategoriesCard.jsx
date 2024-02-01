@@ -6,7 +6,7 @@ const CategoriesCard = ({imgURL, title}) => {
       <div className="img-box">
       <img src={imgURL} alt="product" />
       </div>
-      <h4>{title}</h4>
+      <h2>{title}</h2>
     </div>
   );
 };

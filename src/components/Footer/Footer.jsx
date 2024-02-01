@@ -1,5 +1,7 @@
 import { FaFacebookF } from "react-icons/fa";
 import { GrInstagram } from "react-icons/gr";
+import { FaTwitter } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -11,16 +13,16 @@ const Footer = () => {
             <div>
             <ul>
               <li>
-                <a href="#">about us</a>
+                <Link href="#">about us</Link>
               </li>
               <li>
-                <a href="#">our services</a>
+                <Link href="#">our services</Link>
               </li>
               <li>
-                <a href="#">privacy policy</a>
+                <Link href="#">privacy policy</Link>
               </li>
               <li>
-                <a href="#">affiliate program</a>
+                <Link href="#">affiliate program</Link>
               </li>
             </ul>
             </div>
@@ -30,16 +32,16 @@ const Footer = () => {
             <h4>get help</h4>
             <ul>
               <li>
-                <a href="#">FAQ</a>
+                <Link href="#">FAQ</Link>
               </li>
               <li>
-                <a href="#">shipping</a>
+                <Link href="#">shipping</Link>
               </li>
               <li>
-                <a href="#">returns</a>
+                <Link href="#">returns</Link>
               </li>
               <li>
-                <a href="#">order status</a>
+                <Link href="#">order status</Link>
               </li>
             </ul>
           </div>
@@ -47,28 +49,31 @@ const Footer = () => {
             <h4>online shop</h4>
             <ul>
               <li>
-                <a href="#">watch</a>
+                <Link href="#">watch</Link>
               </li>
               <li>
-                <a href="#">bag</a>
+                <Link href="#">bag</Link>
               </li>
               <li>
-                <a href="#">shoes</a>
+                <Link href="#">shoes</Link>
               </li>
               <li>
-                <a href="#">dress</a>
+                <Link href="#">dress</Link>
               </li>
             </ul>
           </div>
           <div className="footer-col">
             <h4>follow us</h4>
             <div className="social-links">
-              <a href="#">
+              <Link href="#">
                 <FaFacebookF />
-              </a>
-              <a href="#">
+              </Link>
+              <Link href="#">
                 <GrInstagram />
-              </a>
+              </Link>
+              <Link href="#">
+                <FaTwitter />
+              </Link>
             </div>
           </div>
         </div>

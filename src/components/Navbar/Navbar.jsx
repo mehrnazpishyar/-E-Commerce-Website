@@ -1,13 +1,16 @@
 import { FaSearch } from "react-icons/fa";
 import { RiHeartFill, RiShoppingCartFill } from "react-icons/ri";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { MdOutlineLogin,MdLogout } from "react-icons/md";
+import { MdOutlineLogin, MdLogout } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Menu from "../Menu/Menu";
 import { useAuth0 } from "@auth0/auth0-react";
+import { useContext } from "react";
+import { AppContext } from "../context/AppProvider";
 
 const Navbar = () => {
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
+  const { query, setQuery } = useContext(AppContext);
 
   return (
     <header>
@@ -18,9 +21,10 @@ const Navbar = () => {
           </div>
           <div className="search-box">
             <input
-              type="search"
-              name="search"
-              id=""
+              type="text"
+              className="text-field"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
               placeholder="Search For Products..."
             />
             <div className="search-icon">
@@ -30,14 +34,14 @@ const Navbar = () => {
           <Menu />
           <div className="tn-icons">
             <Link to="/favorite" className="fav-icon favorite">
-              <RiHeartFill /> <span className="count">0</span><span className="tooltiptext">favorite</span>
+              <RiHeartFill /> <span className="count">0</span>
+              <span className="tooltiptext">favorite</span>
             </Link>
             <Link to="/cart" className="fav-icon cart">
               <RiShoppingCartFill /> <span className="count">0</span>
               <span className="tooltiptext">cart</span>
             </Link>
-         
-          
+
             {isAuthenticated ? (
               <Link
                 to="/user"
@@ -46,7 +50,8 @@ const Navbar = () => {
                   logout({ logoutParams: { returnTo: window.location.origin } })
                 }
               >
-                <MdLogout /><span className="tooltiptext">logout</span>
+                <MdLogout />
+                <span className="tooltiptext">logout</span>
               </Link>
             ) : (
               <Link
@@ -54,16 +59,15 @@ const Navbar = () => {
                 className="cart-icon login"
                 onClick={() => loginWithRedirect()}
               >
-                <MdOutlineLogin /><span className="tooltiptext">login</span>
+                <MdOutlineLogin />
+                <span className="tooltiptext">login</span>
               </Link>
             )}
-               {
-               isAuthenticated && (
-                  <div className="cart-user">
+            {isAuthenticated && (
+              <div className="cart-user">
                 <span className="user">Hello, {user.name}</span>
-                </div>
-              )
-            }
+              </div>
+            )}
           </div>
           <div className="hamburger-menu">
             <GiHamburgerMenu />

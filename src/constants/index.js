@@ -1,7 +1,8 @@
-import { FaTruck} from "react-icons/fa";
-import { AiFillDollarCircle } from "react-icons/ai";
+
 import { RiHeadphoneFill } from "react-icons/ri";
 import { FaPercent } from "react-icons/fa6";
+import { LuTruck } from "react-icons/lu";
+import { CgDollar } from "react-icons/cg";
 
 export const categoryData=[
     {
@@ -49,12 +50,12 @@ export const FAQ =[
 
 export const benefits = [
     {
-        icon: FaTruck,
+        icon: LuTruck,
         title:"Free Shiping",
         description: "Oder above $1000"
     },
     {
-        icon: AiFillDollarCircle,
+        icon: CgDollar,
         title:"Return & Refund",
         description: "Money Back Gaurenty"
     },

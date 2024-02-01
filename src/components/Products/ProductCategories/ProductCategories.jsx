@@ -5,7 +5,7 @@ const ProductCategories = () => {
   return (
     <div className="categories">
       <div className="title">
-        <h2>Categories</h2>
+        <h1>Categories</h1>
       </div>
       <div className="categories-container container">
         {categoryData.map((category) => (
