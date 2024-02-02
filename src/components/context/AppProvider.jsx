@@ -10,9 +10,7 @@ export default function AppProvider({ children }) {
   const [query, setQuery] = useState("");
   const [allProducts, setAllProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
- 
-
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -21,18 +19,17 @@ export default function AppProvider({ children }) {
         const url = query ? `${apiUrl}?title=${query}` : apiUrl;
         const { data } = await axios.get(url);
         setAllProducts(data);
+        setFilteredProducts(data);
       } catch (error) {
-        setAllProducts([])
+        setAllProducts([]);
+        setFilteredProducts([]);
         toast.error("Error fetching data");
       } finally {
         setIsLoading(false);
       }
     }
-
     fetchData();
   }, [query]);
-
-  // search syntax
 
   return (
     <AppContext.Provider
@@ -42,7 +39,8 @@ export default function AppProvider({ children }) {
         setAllProducts,
         query,
         setQuery,
-      
+        filteredProducts,
+        setFilteredProducts,
       }}
     >
       {children}

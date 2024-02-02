@@ -1,22 +1,27 @@
-import { useState } from "react";
-import { IoMdArrowDropdown } from "react-icons/io";
+
+import { useContext } from "react";
+import { AppContext } from "../../context/AppProvider";
 
 const CategorieFilter = () => {
-  const [isActive, setIsActive] = useState(false);
+
+  const { sort, setSort } = useContext(AppContext);
+
+  const handleSelectChange = (e) => {
+    setSort(e.target.value);
+
+  };
+
   return (
     <div className="dropdown">
-      <div className="dropdown-btn" onClick={(e) => setIsActive(!isActive)}>
-        Filter by Date
-        <span>
-          <IoMdArrowDropdown />
-        </span>
-      </div>
-      {isActive && (
-        <div className="dropdown-content">
-          <div className="dropdown-item">Latest</div>
-          <div className="dropdown-item">Earliest</div>
-        </div>
-      )}
+      <select
+        className="dropdown-btn"
+        value={sort}
+        onChange={handleSelectChange}
+      >
+        <option value="all">All</option>
+        <option value="latest">Latest</option>
+        <option value="earliest">Earliest</option>
+      </select>
     </div>
   );
 };

@@ -1,25 +1,28 @@
 import { useState } from "react";
-import { IoMdArrowDropdown } from "react-icons/io";
 
 const CategorieFilter = () => {
   const [isActive, setIsActive] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const handleSelectChange = (e) => {
+    setSelectedCategory(e.target.value);
+    setIsActive(false);
+  };
+
   return (
     <div className="dropdown">
-      <div className="dropdown-btn" onClick={(e) => setIsActive(!isActive)}>
-        Filter by Category
-        <span>
-          <IoMdArrowDropdown />
-        </span>
-      </div>
-      {isActive && (
-        <div className="dropdown-content">
-          <div className="dropdown-item">All</div>
-          <div className="dropdown-item">Women</div>
-          <div className="dropdown-item">Men</div>
-          <div className="dropdown-item">Jewellery</div>
-          <div className="dropdown-item">Electronics</div>
-        </div>
-      )}
+      <select
+        className="dropdown-btn"
+        value={selectedCategory}
+        onChange={handleSelectChange}
+        onClick={() => setIsActive(!isActive)}
+      >
+        <option value="All">All</option>
+        <option value="Women">Women</option>
+        <option value="Men">Men</option>
+        <option value="Jewellery">Jewellery</option>
+        <option value="Electronics">Electronics</option>
+      </select>
     </div>
   );
 };

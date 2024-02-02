@@ -1,26 +1,29 @@
-import { useState } from "react";
-import { IoMdArrowDropdown } from "react-icons/io";
 
-const PriceFilter = () => {
-  const [isActive, setIsActive] = useState(false);
+import { useContext } from "react";
+import { AppContext } from "../../context/AppProvider";
+
+const CategorieFilter = () => {
+
+  const { sort, setSort } = useContext(AppContext);
+
+  const handleSelectChange = (e) => {
+    setSort(e.target.value);
+
+  };
+
   return (
     <div className="dropdown">
-      <div className="dropdown-btn" onClick={(e) => setIsActive(!isActive)}>
-        Filter by Price
-        <span>
-          <IoMdArrowDropdown />
-        </span>
-      </div>
-      {isActive && (
-        <div className="dropdown-content">
-          <div className="dropdown-item">All</div>
-          <div className="dropdown-item">$0-50</div>
-          <div className="dropdown-item">$50-100</div>
-          <div className="dropdown-item">Over $100</div>
-        </div>
-      )}
+      <select
+        className="dropdown-btn"
+        value={sort}
+        onChange={handleSelectChange}
+      >
+        <option value="all">All</option>
+        <option value="latest">Latest</option>
+        <option value="earliest">Earliest</option>
+      </select>
     </div>
   );
 };
 
-export default PriceFilter;
+export default CategorieFilter;
