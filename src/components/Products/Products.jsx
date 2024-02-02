@@ -5,9 +5,13 @@ import { AppContext } from "../context/AppProvider";
 import Loader from "../Loader/Loader";
 import ProductsItems from "./ProductsItems";
 
-const Products = () => {
-  const { isLoading, allProducts, query } = useContext(AppContext);
 
+const Products = () => {
+  const { isLoading, allProducts, query, selectedCategory } = useContext(AppContext);
+
+ 
+
+  const filterProducts = selectedCategory ? allProducts.filter((product) => product.category === selectedCategory.value) : allProducts;
   return (
     <div className="products">
       <ProductCategories />
@@ -15,13 +19,14 @@ const Products = () => {
       <div className="title">
         <h1>All Products</h1>
       </div>
+     
       <ProductsFilter />
       <div className="shop-container">
         <div className="product-cart">
           {isLoading ? (
             <Loader />
           ) : (
-            allProducts
+            filterProducts
               .filter((item) => {
                 return query.toLowerCase() === ""
                   ? item

@@ -1,29 +1,27 @@
-import { useState } from "react";
+import Select from 'react-select'
+import { useContext } from "react";
+import { AppContext } from "../../context/AppProvider";
 
 const CategorieFilter = () => {
-  const [isActive, setIsActive] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const { allProducts,selectedCategory, setSelectedCategory } = useContext(AppContext);
 
-  const handleSelectChange = (e) => {
-    setSelectedCategory(e.target.value);
-    setIsActive(false);
-  };
+
+
+  const categories = Array.from(new Set(allProducts.map((res) => res.category)));
+
+  const categoryOptions = categories.map((category) => ({
+    value: category,
+    label: category
+  }));
 
   return (
-    <div className="dropdown">
-      <select
-        className="dropdown-btn"
-        value={selectedCategory}
-        onChange={handleSelectChange}
-        onClick={() => setIsActive(!isActive)}
-      >
-        <option value="All">All</option>
-        <option value="Women">Women</option>
-        <option value="Men">Men</option>
-        <option value="Jewellery">Jewellery</option>
-        <option value="Electronics">Electronics</option>
-      </select>
-    </div>
+    <Select
+    options={categoryOptions}
+    isClearable
+    placeholder="Select a category"
+    onChange={(selectOption) => setSelectedCategory(selectOption)}
+    value={selectedCategory}
+  />
   );
 };
 

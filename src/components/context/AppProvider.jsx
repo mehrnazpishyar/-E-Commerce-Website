@@ -11,6 +11,7 @@ export default function AppProvider({ children }) {
   const [allProducts, setAllProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -41,6 +42,8 @@ export default function AppProvider({ children }) {
         setQuery,
         filteredProducts,
         setFilteredProducts,
+        selectedCategory,
+        setSelectedCategory
       }}
     >
       {children}

@@ -8,7 +8,7 @@ const ProductsItems = ({item}) => {
   return (
     <div className="item-card">
       <img src={item.image} alt="products" />
-            <h5>{item.title}</h5>
+            <h5>{item.title.slice(0,45)}</h5>
             <p>{item.category} category</p>
             <div className="rating">
               <Link href="">
