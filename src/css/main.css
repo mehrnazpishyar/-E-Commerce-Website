@@ -72,20 +72,32 @@ ul {
   padding: 0;
 }
 
-.tn-container .search-box {
+header .tn-container .search-box {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.tn-container {
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  border-bottom: 1px solid #dddddd;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  left: 0;
+}
+header .tn-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 0 0.5rem 0;
-  border-bottom: 1px solid #dddddd;
+  width: 90%;
+  margin-inline: auto;
+  max-width: 1920px;
 }
-.tn-container .logo {
+header .tn-container .logo {
   font-size: 1.5rem;
   font-weight: 600;
   -webkit-text-decoration: uppercase;
@@ -95,7 +107,7 @@ ul {
   color: #4338ca;
   border-radius: 10px;
 }
-.tn-container .search-box {
+header .tn-container .search-box {
   position: relative;
   width: 450px;
   border: 2px solid #ffe600;
@@ -103,7 +115,7 @@ ul {
   border-radius: 50px;
   margin-left: 50px;
 }
-.tn-container .search-box input {
+header .tn-container .search-box input {
   width: 100%;
   font-size: 13px;
   height: 26px;
@@ -111,10 +123,10 @@ ul {
   outline: none;
   border-radius: 30px;
 }
-.tn-container .search-box input::-webkit-search-cancel-button {
+header .tn-container .search-box input::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
-.tn-container .search-box .search-icon {
+header .tn-container .search-box .search-icon {
   cursor: pointer;
   font-size: 1.2rem;
   width: 43px;
@@ -127,34 +139,34 @@ ul {
   border-radius: 50px;
   background-color: #ffe600;
 }
-.tn-container .search-box .search-icon .srch {
+header .tn-container .search-box .search-icon .srch {
   position: absolute;
   top: 10px;
   left: 12px;
   color: #4338ca;
 }
 @media (max-width: 768px) {
-  .tn-container .search-box .search-icon {
+  header .tn-container .search-box .search-icon {
     position: absolute;
   }
 }
-.tn-container .tn-icons {
+header .tn-container .tn-icons {
   display: flex;
   gap: 1rem;
 }
-.tn-container .tn-icons a {
+header .tn-container .tn-icons a {
   font-size: 1.3rem;
 }
-.tn-container .tn-icons .fav-icon,
-.tn-container .tn-icons .cart-icon {
+header .tn-container .tn-icons .fav-icon,
+header .tn-container .tn-icons .cart-icon {
   position: relative;
   color: #4338ca;
 }
-.tn-container .tn-icons .fav-icon:hover,
-.tn-container .tn-icons .cart-icon:hover {
+header .tn-container .tn-icons .fav-icon:hover,
+header .tn-container .tn-icons .cart-icon:hover {
   color: #ffe600;
 }
-.tn-container .tn-icons .count {
+header .tn-container .tn-icons .count {
   position: absolute;
   top: -0.6rem;
   right: -0.6rem;
@@ -164,21 +176,24 @@ ul {
   padding: 2px 4px;
   border-radius: 3px;
 }
-.tn-container .tn-icons .cart-user {
+header .tn-container .tn-icons .cart-user {
   display: flex;
   color: #4338ca;
   font-size: 1.3rem;
   font-weight: 500;
 }
-.tn-container .tn-icons .cart-user .user {
+header .tn-container .tn-icons .cart-user .user {
   margin-left: 5px;
   font-size: 15px;
 }
-.tn-container .hamburger-menu {
+header .tn-container .hamburger-menu {
   font-size: 2.5rem;
   display: none;
 }
-.tn-container .favorite .tooltiptext, .tn-container .cart .tooltiptext, .tn-container .login .tooltiptext, .tn-container .logout .tooltiptext {
+header .tn-container .favorite .tooltiptext,
+header .tn-container .cart .tooltiptext,
+header .tn-container .login .tooltiptext,
+header .tn-container .logout .tooltiptext {
   font-size: 14px;
   visibility: hidden;
   width: -moz-fit-content;
@@ -195,11 +210,14 @@ ul {
   left: 50%;
   margin-left: -20px;
 }
-.tn-container .favorite:hover .tooltiptext, .tn-container .cart:hover .tooltiptext, .tn-container .login:hover .tooltiptext, .tn-container .logout:hover .tooltiptext {
+header .tn-container .favorite:hover .tooltiptext,
+header .tn-container .cart:hover .tooltiptext,
+header .tn-container .login:hover .tooltiptext,
+header .tn-container .logout:hover .tooltiptext {
   visibility: visible;
 }
 @media (max-width: 768px) {
-  .tn-container .hamburger-menu {
+  header .tn-container .hamburger-menu {
     display: block;
     font-size: 20px;
     color: #4338ca;

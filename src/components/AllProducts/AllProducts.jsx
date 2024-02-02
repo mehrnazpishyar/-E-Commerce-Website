@@ -1,4 +1,4 @@
-// AllProducts.js
+
 import { useContext } from "react";
 import { AppContext } from "../context/AppProvider";
 import Loader from "../Loader/Loader";
@@ -6,20 +6,13 @@ import ProductsItems from "../Products/ProductsItems";
 import { Link } from "react-router-dom";
 
 const AllProducts = () => {
-  const { isLoading, allproducts, setAllproducts, originalProducts } = useContext(
-    AppContext
-  );
+  const { isLoading, allProducts, setAllProducts,query } = useContext(AppContext);
 
-  const filterProduct = (product) => {
-    const update = originalProducts.filter((x) => {
-      return x.category === product;
-    });
-    setAllproducts(update);
+  const filterProducts = (category) => {
+    const filteredProducts = allProducts.filter((product) => product.category === category);
+    setAllProducts(filteredProducts);
   };
 
-  const resetProducts = () => {
-    setAllproducts(originalProducts);
-  };
 
   return (
     <div className="allproducts">
@@ -29,19 +22,19 @@ const AllProducts = () => {
           <div className="categories">
             <h3>Categories</h3>
             <ul>
-              <li onClick={resetProducts}>
+              <li >
                 <Link to="">All Products</Link>
               </li>
-              <li onClick={() => filterProduct("men's clothing")}>
-                <Link to="">Men</Link>
-              </li>
-              <li onClick={() => filterProduct("women's clothing")}>
+              <li onClick={() => filterProducts("women's clothing")}>
                 <Link to="">Women</Link>
               </li>
-              <li onClick={() => filterProduct("jewelery")}>
+              <li onClick={() => filterProducts("men's clothing")}>
+                <Link to="">Men</Link>
+              </li>
+              <li onClick={() => filterProducts("jewelery")}>
                 <Link to="">Jewelery</Link>
               </li>
-              <li onClick={() => filterProduct("electronics")}>
+              <li onClick={() => filterProducts("electronics")}>
                 <Link to="">Electronics</Link>
               </li>
             </ul>
@@ -52,9 +45,13 @@ const AllProducts = () => {
             {isLoading ? (
               <Loader />
             ) : (
-              allproducts.map((item) => (
-                <ProductsItems key={item.id} item={item} />
-              ))
+              allProducts
+              .filter((item) => {
+                return query.toLowerCase() === ""
+                  ? item
+                  : item.title.toLowerCase().includes(query);
+              })
+              .map((item) => <ProductsItems key={item.id} item={item} />)
             )}
           </div>
         </div>

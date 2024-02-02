@@ -1,60 +1,49 @@
-// AppProvider.js
 import { createContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
 
 export const AppContext = createContext();
 
+const apiUrl = "https://fakestoreapi.com/products";
+
 export default function AppProvider({ children }) {
   const [query, setQuery] = useState("");
-  const [originalProducts, setOriginalProducts] = useState([]);
-  const [allproducts, setAllproducts] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const url = "https://fakestoreapi.com/products";
+ 
+
 
   useEffect(() => {
     async function fetchData() {
       try {
         setIsLoading(true);
+        const url = query ? `${apiUrl}?title=${query}` : apiUrl;
         const { data } = await axios.get(url);
-        setOriginalProducts(data);
-        setAllproducts(data);
+        setAllProducts(data);
       } catch (error) {
-        toast.error("Error");
+        setAllProducts([])
+        toast.error("Error fetching data");
       } finally {
         setIsLoading(false);
       }
     }
 
     fetchData();
-  }, []);
+  }, [query]);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        setIsLoading(true);
-        let apiUrl = url;
-
-        if (query) {
-          apiUrl += `?title=${query}`;
-        }
-
-        const { data } = await axios.get(apiUrl);
-        setAllproducts(data);
-      } catch (error) {
-        toast.error("Error");
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    fetchData();
-  }, [url, query]);
+  // search syntax
 
   return (
     <AppContext.Provider
-      value={{ isLoading, allproducts, setAllproducts, query, setQuery, originalProducts }}
+      value={{
+        isLoading,
+        allProducts,
+        setAllProducts,
+        query,
+        setQuery,
+      
+      }}
     >
       {children}
     </AppContext.Provider>

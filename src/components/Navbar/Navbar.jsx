@@ -10,11 +10,12 @@ import { AppContext } from "../context/AppProvider";
 
 const Navbar = () => {
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
-  const { query, setQuery } = useContext(AppContext);
+  const {query, setQuery } = useContext(AppContext);
 
+  
   return (
     <header>
-      <nav className="container">
+      <nav>
         <div className="tn-container">
           <div className="logo">
             <a href="">Shopping</a>

@@ -6,7 +6,7 @@ import Loader from "../Loader/Loader";
 import ProductsItems from "./ProductsItems";
 
 const Products = () => {
-  const { isLoading, allproducts } = useContext(AppContext);
+  const { isLoading, allProducts, query } = useContext(AppContext);
 
   return (
     <div className="products">
@@ -21,9 +21,13 @@ const Products = () => {
           {isLoading ? (
             <Loader />
           ) : (
-            allproducts.map((item) => (
-              <ProductsItems key={item.id} item={item} />
-            ))
+            allProducts
+              .filter((item) => {
+                return query.toLowerCase() === ""
+                  ? item
+                  : item.title.toLowerCase().includes(query);
+              })
+              .map((item) => <ProductsItems key={item.id} item={item} />)
           )}
         </div>
       </div>

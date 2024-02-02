@@ -1,153 +1,165 @@
 @use "../abstracts/variables" as *;
 
-.tn-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 0 0.5rem 0;
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: $color-white;
+  z-index: 1000;
   border-bottom: 1px solid $color-gray-light;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ left: 0;
 
-  .logo {
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-decoration: uppercase;
-    padding: 0 0.4rem;
-    letter-spacing: 0.1rem;
-    color: $color-purple;
-    border-radius: 10px;
-  }
+  .tn-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0 0.5rem 0;
+    width: 90%;
+    margin-inline: auto;
+    max-width: 1920px;
 
-  .search-box {
-    position: relative;
-    width: 450px;
-    border: 2px solid $color-yellow;
-    padding: 0.5rem 1rem;
-    @extend %align-center;
-    border-radius: $border-radius-50;
-    margin-left: 50px;
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-decoration: uppercase;
+      padding: 0 0.4rem;
+      letter-spacing: 0.1rem;
+      color: $color-purple;
+      border-radius: 10px;
+    }
 
-    input {
-      width: 100%;
-      font-size: 13px;
-      height: 26px;
-      border: none;
-      outline: none;
-      border-radius: 30px;
+    .search-box {
+      position: relative;
+      width: 450px;
+      border: 2px solid $color-yellow;
+      padding: 0.5rem 1rem;
+      @extend %align-center;
+      border-radius: $border-radius-50;
+      margin-left: 50px;
 
-      &::-webkit-search-cancel-button {
-        -webkit-appearance: none;
+      input {
+        width: 100%;
+        font-size: 13px;
+        height: 26px;
+        border: none;
+        outline: none;
+        border-radius: 30px;
+
+        &::-webkit-search-cancel-button {
+          -webkit-appearance: none;
+        }
+      }
+
+      .search-icon {
+        cursor: pointer;
+        font-size: 1.2rem;
+        width: 43px;
+        height: 41px;
+        position: absolute;
+        border: none;
+        top: 0px;
+        right: 0;
+        transform: scale(0.9);
+        border-radius: 50px;
+        background-color: $color-yellow;
+
+        .srch {
+          position: absolute;
+          top: 10px;
+          left: 12px;
+          color: $color-purple;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .search-icon {
+          position: absolute;
+        }
       }
     }
 
-    .search-icon {
-      cursor: pointer;
-      font-size: 1.2rem;
-      width: 43px;
-      height: 41px;
-      position: absolute;
-      border: none;
-      top: 0px;
-      right: 0;
-      transform: scale(0.9);
-      border-radius: 50px;
-      background-color: $color-yellow;
+    .tn-icons {
+      display: flex;
+      gap: 1rem;
 
-      .srch {
-        position: absolute;
-        top: 10px;
-        left: 12px;
+      a {
+        font-size: 1.3rem;
+      }
+
+      .fav-icon,
+      .cart-icon {
+        position: relative;
         color: $color-purple;
+
+        &:hover {
+          color: $color-yellow;
+        }
+      }
+
+      .count {
+        position: absolute;
+        top: -0.6rem;
+        right: -0.6rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+        line-height: 1;
+        padding: 2px 4px;
+        border-radius: 3px;
+      }
+
+      .cart-user {
+        display: flex;
+        color: $color-purple;
+        font-size: 1.3rem;
+        font-weight: 500;
+
+        .user {
+          margin-left: 5px;
+          font-size: 15px;
+        }
+      }
+    }
+
+    .hamburger-menu {
+      font-size: 2.5rem;
+      display: none;
+    }
+
+    .favorite,
+    .cart,
+    .login,
+    .logout {
+      .tooltiptext {
+        font-size: 14px;
+        visibility: hidden;
+        width: fit-content;
+        background-color: $color-blue;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        top: -100%;
+        left: 50%;
+        margin-left: -20px;
+      }
+      &:hover .tooltiptext {
+        visibility: visible;
       }
     }
 
     @media (max-width: 768px) {
-      .search-icon {
-        position: absolute;
+      .hamburger-menu {
+        display: block;
+        font-size: 20px;
+        color: $color-purple;
+        width: 100px;
+        text-align: center;
       }
-    }
-  }
-
-  .tn-icons {
-    display: flex;
-    gap: 1rem;
-
-    a {
-      font-size: 1.3rem;
-    }
-
-    .fav-icon,
-    .cart-icon {
-      position: relative;
-      color: $color-purple;
-
-      &:hover {
-        color: $color-yellow;
-      }
-    }
-
-    .count {
-      position: absolute;
-      top: -0.6rem;
-      right: -0.6rem;
-      font-size: 0.8rem;
-      font-weight: 500;
-      line-height: 1;
-      padding: 2px 4px;
-      border-radius: 3px;
-    }
-
-    .cart-user {
-      display: flex;
-      color: $color-purple;
-      font-size: 1.3rem;
-      font-weight: 500;
-
-      .user {
-        margin-left: 5px;
-        font-size: 15px;
-      }
-    }
-
-  }
-
-  .hamburger-menu {
-    font-size: 2.5rem;
-    display: none;
-  }
-
-  .favorite, .cart, .login, .logout {
-    .tooltiptext{
-      font-size: 14px;
-      visibility: hidden;
-      width:fit-content;
-      background-color: $color-blue;
-      color: #fff;
-      text-align: center;
-      border-radius: 6px;
-      padding: 5px;
-      
-      /* Position the tooltip */
-      position: absolute;
-      z-index: 1;
-      top: -100%;
-      left: 50%;
-      margin-left: -20px;
-    }
-    &:hover .tooltiptext {
-      visibility: visible;
-
-    }
-  }
-  
-  
-
-  @media (max-width: 768px) {
-    .hamburger-menu {
-      display: block;
-      font-size: 20px;
-      color: $color-purple;
-      width: 100px;
-      text-align: center;
     }
   }
 }
