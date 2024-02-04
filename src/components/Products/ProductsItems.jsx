@@ -7,7 +7,8 @@ import { useContext } from "react";
 import { AppContext } from "../context/AppProvider";
 
 const ProductsItems = ({ item }) => {
-  const { viewDetail } = useContext(AppContext);
+  const { viewDetail, addToCart,cart} = useContext(AppContext);
+  const isAdd = cart.some((cartItem) => cartItem.id === item.id);
   return (
     <div className="item-card">
       <img src={item.image} alt="products" />
@@ -22,18 +23,25 @@ const ProductsItems = ({ item }) => {
         <span>${item.price}</span>
       </div>
       <div className="card-buttons">
-        <button className="btn">Add to Cart</button>
+        
+      {isAdd ? (
+          <p>Already Added! ✅</p>
+        ) : (
+          <button className="btn" onClick={() => addToCart(item)}>
+            Add to Cart
+          </button>
+        )}
         <button className="btn">Add to Favorite</button>
       </div>
       <div className="card-icons">
-        <Link href="">
+        <Link to="">
           <FaRegHeart />
         </Link>
-        <Link href=""  onClick={() =>{viewDetail(item)}}>
+        <Link to=""  onClick={() =>{viewDetail(item)}}>
           <PiEye className="eye-icon"  />
         </Link>
-        <Link href="">
-          <TiShoppingCart />
+        <Link to="">
+          <TiShoppingCart onClick={() =>{addToCart(item)}}/>
         </Link>
       </div>
     </div>

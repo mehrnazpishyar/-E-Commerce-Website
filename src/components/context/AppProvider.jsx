@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import toast from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import axios from "axios";
 
 export const AppContext = createContext();
@@ -14,8 +14,8 @@ export default function AppProvider({ children }) {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [detail, setDetail] = useState([]);
   const [closeModal, setCloseModal] = useState(false);
-
-
+  const [cart, setCart] = useState([]);
+  
 
   // --------- fetch Data -----------
   useEffect(() => {
@@ -39,9 +39,28 @@ export default function AppProvider({ children }) {
 
   //------------ product detail-------------
   const viewDetail = (product) => {
-    setDetail([product])
-    setCloseModal(true)
-  }
+    setDetail([product]);
+    setCloseModal(true);
+  };
+
+  //------------ add to cart-------------
+
+  const addToCart = (product) => {
+    const exsit = cart.find((x) => {
+      return x.id === product.id;
+    });
+
+    if (exsit) {
+      toast.success("This Product is already added to cart!");
+    } else {
+      setCart([...cart, { ...product, qty: 1 }]);
+      toast.success("Product is added to cart")
+    }
+  };
+ 
+
+
+
 
   return (
     <AppContext.Provider
@@ -59,8 +78,10 @@ export default function AppProvider({ children }) {
         setDetail,
         viewDetail,
         closeModal,
-        setCloseModal
-
+        setCloseModal,
+        cart,
+        setCart,
+        addToCart,
       }}
     >
       {children}

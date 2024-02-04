@@ -30,9 +30,9 @@
       right: 20px;
 
       .icon {
-        font-size: 20px;
+        font-size: 25px;
         &:hover {
-          color: red;
+          color: $color-red;
         }
       }
     }
@@ -80,6 +80,12 @@
           cursor: pointer;
           border-radius: 4px;
           font-size: 16px;
+
+          &:hover {
+            background-color:$color-yellow;
+            color: $color-purple;
+            transition: 0.5s;
+          }
         }
       }
     }
