@@ -4,22 +4,27 @@ import { useContext } from "react";
 import { AppContext } from "../context/AppProvider";
 import Loader from "../Loader/Loader";
 import ProductsItems from "./ProductsItems";
-
+import ProductDetail from "./ProductDetail/ProductDetail";
 
 const Products = () => {
-  const { isLoading, allProducts, query, selectedCategory } = useContext(AppContext);
+  const { isLoading, allProducts, query, selectedCategory } =
+    useContext(AppContext);
 
- 
+  const filterProducts = selectedCategory
+    ? allProducts.filter(
+        (product) => product.category === selectedCategory.value
+      )
+    : allProducts;
 
-  const filterProducts = selectedCategory ? allProducts.filter((product) => product.category === selectedCategory.value) : allProducts;
   return (
     <div className="products">
+      <ProductDetail />
       <ProductCategories />
       <hr />
       <div className="title">
         <h1>All Products</h1>
       </div>
-     
+
       <ProductsFilter />
       <div className="shop-container">
         <div className="product-cart">

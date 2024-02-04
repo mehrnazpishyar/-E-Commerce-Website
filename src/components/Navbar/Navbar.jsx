@@ -10,9 +10,8 @@ import { AppContext } from "../context/AppProvider";
 
 const Navbar = () => {
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
-  const {query, setQuery } = useContext(AppContext);
+  const { query, setQuery } = useContext(AppContext);
 
-  
   return (
     <header>
       <nav>

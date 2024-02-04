@@ -1,6 +1,7 @@
 @import "../abstracts/variables";
 
 .products {
+  position: relative;
   .title {
     text-align: center;
     margin-top: 50px;

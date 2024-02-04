@@ -67,7 +67,7 @@ const Info = () => {
   return (
     <div className="info-section container">
       <h2 className={`title ${topToBottom ? "topToBottom" : ""}`}>
-        product information
+        Online Shop
       </h2>
       <div className="main">
         <div className={`left ${leftToRight ? "leftToRight" : ""}`}>
@@ -76,7 +76,11 @@ const Info = () => {
         <div className={`right ${rightToLeft ? "rightToLeft" : ""}`}>
           <h3>Welcome to our Online Shop!</h3>
           <p>
-          Your Ultimate Online Shopping Destination. At our Online Shop, we bring you a curated selection of high-quality products that combine style, functionality, and affordability. Our online store is your one-stop destination for all your needs, offering a diverse range of products that cater to different tastes and preferences.
+            Your Ultimate Online Shopping Destination. At our Online Shop, we
+            bring you a curated selection of high-quality products that combine
+            style, functionality, and affordability. Our online store is your
+            one-stop destination for all your needs, offering a diverse range of
+            products that cater to different tastes and preferences.
           </p>
         </div>
       </div>

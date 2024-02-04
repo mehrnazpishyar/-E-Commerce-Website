@@ -1,29 +1,28 @@
 @import "../abstracts/variables";
 
 .info-section {
-  
   margin-top: 100px;
   width: 100%;
-  min-height: 80vh;
+  min-height: 85vh;
   background-color: $color-gray-light;
   position: relative;
   padding: 3rem;
   overflow: hidden;
 
-  h2{
+  h2 {
     margin-bottom: 60px;
     text-align: center;
     transform: translateY(-200%);
     color: $color-black;
 
-    &.topToBottom{
-        opacity: 1;
-        transform: translateY(0%);
-        transition: .8s all ease
+    &.topToBottom {
+      opacity: 1;
+      transform: translateY(0%);
+      transition: 0.8s all ease;
     }
   }
 
-  .main{
+  .main {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -31,7 +30,7 @@
   .left {
     width: 50%;
     transform: translateX(-100%);
-    transition: .8s all ease;
+    transition: 0.8s all ease;
 
     img {
       width: 80%;
@@ -49,7 +48,7 @@
     transform: translateX(100%);
     padding: 3rem;
     text-align: center;
-    transition: .8s all ease;
+    transition: 0.8s all ease;
 
     h3 {
       color: $color-purple;
@@ -68,12 +67,12 @@
 
   .popup {
     opacity: 1;
-    animation: popup 0.8s ease-in; 
+    animation: popup 0.8s ease-in;
   }
 
   .fade_out {
     opacity: 1;
-    animation: fade_out 0.8s ease-in; 
+    animation: fade_out 0.8s ease-in;
   }
 
   @keyframes popup {

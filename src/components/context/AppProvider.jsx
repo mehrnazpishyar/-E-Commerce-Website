@@ -12,7 +12,12 @@ export default function AppProvider({ children }) {
   const [isLoading, setIsLoading] = useState(false);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [detail, setDetail] = useState([]);
+  const [closeModal, setCloseModal] = useState(false);
 
+
+
+  // --------- fetch Data -----------
   useEffect(() => {
     async function fetchData() {
       try {
@@ -32,6 +37,12 @@ export default function AppProvider({ children }) {
     fetchData();
   }, [query]);
 
+  //------------ product detail-------------
+  const viewDetail = (product) => {
+    setDetail([product])
+    setCloseModal(true)
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -43,7 +54,13 @@ export default function AppProvider({ children }) {
         filteredProducts,
         setFilteredProducts,
         selectedCategory,
-        setSelectedCategory
+        setSelectedCategory,
+        detail,
+        setDetail,
+        viewDetail,
+        closeModal,
+        setCloseModal
+
       }}
     >
       {children}
