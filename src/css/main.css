@@ -355,7 +355,7 @@ footer .footer-col .social-links a:hover {
 }
 
 .slider-container {
-  height: 85vh;
+  height: 90vh;
   width: 100%;
   position: relative;
   margin-top: 57px;
@@ -567,9 +567,10 @@ footer .footer-col .social-links a:hover {
   justify-content: space-around;
   align-items: center;
 }
-.products .shop-container .product-cart .item-card {
+
+.item-card {
   width: 400px;
-  height: 500px;
+  max-height: 470px;
   text-align: center;
   padding: 1rem;
   margin-bottom: 20px;
@@ -579,47 +580,47 @@ footer .footer-col .social-links a:hover {
   transition: all 0.2s;
   border-radius: 10px;
 }
-.products .shop-container .product-cart .item-card img {
+.item-card img {
   width: 200px;
   height: 250px;
   max-width: 15rem;
 }
-.products .shop-container .product-cart .item-card h5 {
+.item-card h5 {
   font-weight: 500;
   margin: 1rem 0 1rem;
   font-size: 14px;
   text-transform: capitalize;
   color: #000;
 }
-.products .shop-container .product-cart .item-card p {
+.item-card p {
   color: #64748b;
   text-transform: capitalize;
   font-size: 13px;
   margin-top: 0.7rem;
 }
-.products .shop-container .product-cart .item-card .price {
+.item-card .price {
   text-align: center;
   gap: 0.5rem;
   margin: 0.5rem 0;
   letter-spacing: 1px;
   color: #4338ca;
 }
-.products .shop-container .product-cart .item-card .price span {
+.item-card .price span {
   font-weight: 600;
 }
-.products .shop-container .product-cart .item-card .rating {
+.item-card .rating {
   margin-top: 0.5rem;
   font-size: 1rem;
 }
-.products .shop-container .product-cart .item-card .rating a {
+.item-card .rating a {
   color: #ffe600;
 }
-.products .shop-container .product-cart .item-card .card-buttons {
+.item-card .card-buttons {
   display: flex;
   justify-content: space-around;
   gap: 0.5rem;
 }
-.products .shop-container .product-cart .item-card .card-buttons .btn {
+.item-card .card-buttons .btn {
   width: 120px;
   font-size: 0.7rem;
   font-weight: 500;
@@ -631,11 +632,11 @@ footer .footer-col .social-links a:hover {
   border-radius: 10px;
   margin-top: 0.5rem;
 }
-.products .shop-container .product-cart .item-card .card-buttons .btn:hover {
+.item-card .card-buttons .btn:hover {
   background-color: #ffe600;
   color: #4338ca;
 }
-.products .shop-container .product-cart .item-card .card-icons {
+.item-card .card-icons {
   width: 40px;
   height: 60px;
   position: absolute;
@@ -647,7 +648,7 @@ footer .footer-col .social-links a:hover {
   transform: translateX(200%);
   transition: all 0.2s;
 }
-.products .shop-container .product-cart .item-card .card-icons a {
+.item-card .card-icons a {
   font-size: 1.1rem;
   color: #fff;
   padding: 0.4rem;
@@ -657,17 +658,17 @@ footer .footer-col .social-links a:hover {
   border-color: #13c7df;
   background: #13c7df;
 }
-.products .shop-container .product-cart .item-card .card-icons a:hover {
+.item-card .card-icons a:hover {
   border-color: #ffe600;
   background: #ffe600;
 }
-.products .shop-container .product-cart .item-card .card-icons .eye-icon {
+.item-card .card-icons .eye-icon {
   font-size: 1.3rem;
 }
-.products .shop-container .product-cart .item-card:hover .card-icons {
+.item-card:hover .card-icons {
   transform: translateX(0);
 }
-.products .shop-container .product-cart .item-card:hover {
+.item-card:hover {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 

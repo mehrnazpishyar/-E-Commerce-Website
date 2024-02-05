@@ -9,18 +9,16 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const ProductsItems = ({ item }) => {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
-  const { viewDetail, addToCart, cart,addToFavorite,favorite  } = useContext(AppContext);
+  const { viewDetail, addToCart, cart, addToFavorite, favorite } =
+    useContext(AppContext);
 
-
-  
   const isAddToCart = cart.some((cartItem) => cartItem.id === item.id);
   const isAddToFavorite = favorite.some((cartItem) => cartItem.id === item.id);
- 
 
   return (
     <div className="item-card">
       <img src={item.image} alt="products" />
-      <h5>{item.title.slice(0, 45)}</h5>
+      <h5>{item.title.slice(0, 40)}</h5>
       <p>{item.category} category</p>
       <div className="rating">
         <Link href="">
@@ -50,12 +48,12 @@ const ProductsItems = ({ item }) => {
             <p>Already Added to ❤️</p>
           ) : (
             <button className="btn" onClick={() => addToFavorite(item)}>
-               Add to Favorite
+              Add to Favorite
             </button>
           )
         ) : (
           <button className="btn" onClick={loginWithRedirect}>
-          Add to Favorite
+            Add to Favorite
           </button>
         )}
       </div>
@@ -67,7 +65,7 @@ const ProductsItems = ({ item }) => {
           <PiEye className="eye-icon" />
         </Link>
         <Link to="" onClick={() => addToCart(item)}>
-          <TiShoppingCart  />
+          <TiShoppingCart />
         </Link>
       </div>
     </div>

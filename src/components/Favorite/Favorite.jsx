@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 
 const Favorite = () => {
-  const { favorite, setFavorite } = useContext(AppContext);
+  const { favorite, setFavorite, addToCartFromFavorite } =
+    useContext(AppContext);
 
   // Remove product from favorite
   const removeProduct = (product) => {
@@ -37,9 +38,9 @@ const Favorite = () => {
                     <p>Price : ${item.price}</p>
                   </div>
                   <div className="addtocart">
-                    <Link to="/cart">
-                      <button>Add to Cart</button>
-                    </Link>
+                    <button onClick={() => addToCartFromFavorite(item)}>
+                      Add to Cart
+                    </button>
                   </div>
                 </div>
                 <div className="close">

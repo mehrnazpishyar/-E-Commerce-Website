@@ -75,7 +75,20 @@ export default function AppProvider({ children }) {
     }
   };
 
+  //------------ add to cart from favorite-------------
+  const addToCartFromFavorite = (product) => {
+    const exsit = cart.find((x) => x.id === product.id);
 
+    if (exsit) {
+      toast.success("This Product is already added to cart!");
+    } else {
+      setCart([...cart, { ...product, qty: product.qty || 1 }]);
+      toast.success("Product is added to cart from Favorite");
+    }
+       // Remove from favorites
+       const updatedFavorites = favorite.filter((x) => x.id !== product.id);
+       setFavorite(updatedFavorites);
+  };
  
 
 
@@ -103,7 +116,8 @@ export default function AppProvider({ children }) {
         addToCart,
         addToFavorite,
         favorite,
-        setFavorite
+        setFavorite,
+        addToCartFromFavorite,
       }}
     >
       {children}
