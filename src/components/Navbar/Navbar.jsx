@@ -10,7 +10,8 @@ import { AppContext } from "../context/AppProvider";
 
 const Navbar = () => {
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
-  const { query, setQuery } = useContext(AppContext);
+  const { query, setQuery, favorite, cart } = useContext(AppContext);
+
 
   return (
     <header>
@@ -34,11 +35,11 @@ const Navbar = () => {
           <Menu />
           <div className="tn-icons">
             <Link to="/favorite" className="fav-icon favorite">
-              <RiHeartFill /> <span className="count">0</span>
+              <RiHeartFill /> <span className="count">{favorite.length}</span>
               <span className="tooltiptext">favorite</span>
             </Link>
             <Link to="/cart" className="fav-icon cart">
-              <RiShoppingCartFill /> <span className="count">0</span>
+              <RiShoppingCartFill /> <span className="count">{cart.length}</span>
               <span className="tooltiptext">cart</span>
             </Link>
 

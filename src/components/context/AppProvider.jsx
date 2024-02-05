@@ -16,9 +16,8 @@ export default function AppProvider({ children }) {
   const [closeModal, setCloseModal] = useState(false);
   const [cart, setCart] = useState([]);
   const [favorite, setFavorite] = useState([]);
-  
 
-  // --------- fetch Data -----------
+  // ------------ fetch Data -------------
   useEffect(() => {
     async function fetchData() {
       try {
@@ -44,7 +43,7 @@ export default function AppProvider({ children }) {
     setCloseModal(true);
   };
 
-  //------------ add to cart-------------
+  //------------ add to cart----------------
 
   const addToCart = (product) => {
     const exsit = cart.find((x) => {
@@ -55,10 +54,9 @@ export default function AppProvider({ children }) {
       toast.success("This Product is already added to cart!");
     } else {
       setCart([...cart, { ...product, qty: 1 }]);
-      toast.success("Product is added to cart")
+      toast.success("Product is added to cart");
     }
   };
-
 
   //------------ add to favorite-------------
 
@@ -71,7 +69,7 @@ export default function AppProvider({ children }) {
       toast.success("This Product is already added to Favorite!");
     } else {
       setFavorite([...favorite, { ...product, qty: 1 }]);
-      toast.success("Product is added to Favorite")
+      toast.success("Product is added to Favorite");
     }
   };
 
@@ -85,14 +83,36 @@ export default function AppProvider({ children }) {
       setCart([...cart, { ...product, qty: product.qty || 1 }]);
       toast.success("Product is added to cart from Favorite");
     }
-       // Remove from favorites
-       const updatedFavorites = favorite.filter((x) => x.id !== product.id);
-       setFavorite(updatedFavorites);
+
+
+
+    //------------ Remove from favorites-------------
+    const updatedFavorites = favorite.filter((x) => x.id !== product.id);
+    setFavorite(updatedFavorites);
   };
+
+
+
+  //------------ Sort Product by price-------------
+  function sortProductsByPrice(e) {
+    e.stopPropagation();
  
+    if (e.target.value === "LowToHigh") {
+      setAllProducts([
+        ...allProducts.sort((a, b) => {
+          return a.price - b.price;
+        }),
+      ]);
+    }
 
-
-
+    if (e.target.value === "HighToLow") {
+      setAllProducts([
+        ...allProducts.sort((a, b) => {
+          return b.price - a.price;
+        }),
+      ]);
+    }
+  }
 
   return (
     <AppContext.Provider
@@ -118,6 +138,7 @@ export default function AppProvider({ children }) {
         favorite,
         setFavorite,
         addToCartFromFavorite,
+        sortProductsByPrice,
       }}
     >
       {children}

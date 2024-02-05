@@ -17,20 +17,9 @@
   border: none;
 }
 
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
 body {
+  margin: 0;
+  padding: 0;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
@@ -119,7 +108,7 @@ header .tn-container .logo {
 header .tn-container .search-box {
   position: relative;
   width: 450px;
-  border: 2px solid #ffe600;
+  border: 2px solid #fffb00;
   padding: 0.5rem 1rem;
   border-radius: 50px;
   margin-left: 50px;
@@ -146,7 +135,7 @@ header .tn-container .search-box .search-icon {
   right: 0;
   transform: scale(0.9);
   border-radius: 50px;
-  background-color: #ffe600;
+  background-color: #fffb00;
 }
 header .tn-container .search-box .search-icon .srch {
   position: absolute;
@@ -173,26 +162,28 @@ header .tn-container .tn-icons .cart-icon {
 }
 header .tn-container .tn-icons .fav-icon:hover,
 header .tn-container .tn-icons .cart-icon:hover {
-  color: #ffe600;
+  color: #fffb00;
 }
 header .tn-container .tn-icons .count {
   position: absolute;
-  top: -0.6rem;
+  top: -0.8rem;
   right: -0.6rem;
   font-size: 0.8rem;
   font-weight: 500;
-  line-height: 1;
-  padding: 2px 4px;
   border-radius: 3px;
+  color: #ff0000;
+  background-color: #fffb00;
+  border-radius: 50px;
+  padding: 0px 5px;
 }
 header .tn-container .tn-icons .cart-user {
   display: flex;
   color: #4338ca;
   font-size: 1.3rem;
   font-weight: 500;
+  padding-top: 4px;
 }
 header .tn-container .tn-icons .cart-user .user {
-  margin-left: 5px;
   font-size: 15px;
 }
 header .tn-container .hamburger-menu {
@@ -212,7 +203,7 @@ header .tn-container .logout .tooltiptext {
   text-align: center;
   border-radius: 6px;
   padding: 5px;
-  /* Position the tooltip */
+  /* tooltip */
   position: absolute;
   z-index: 1;
   top: -100%;
@@ -265,7 +256,7 @@ footer .footer-col h4::before {
   position: absolute;
   left: 0;
   bottom: -10px;
-  background-color: #ffe600;
+  background-color: #fffb00;
   height: 2px;
   box-sizing: border-box;
   width: 110px;
@@ -336,7 +327,7 @@ footer .footer-col .social-links a:hover {
 }
 .bn-container .navlist a:hover {
   color: #4338ca;
-  border-bottom: 3px solid #ffe600;
+  border-bottom: 3px solid #fffb00;
 }
 .bn-container .navlist a:hover::after {
   width: 100%;
@@ -345,7 +336,7 @@ footer .footer-col .social-links a:hover {
   .bn-container ul {
     position: fixed;
     top: 69px;
-    background-color: #ffe600;
+    background-color: #fffb00;
     height: calc(100vh - 100px);
     width: 50%;
     flex-direction: column;
@@ -493,55 +484,44 @@ footer .footer-col .social-links a:hover {
   transform: scale(1.2);
 }
 
-.products-filter {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 50px;
-}
-
-.dropdown {
-  width: 300px;
-  position: relative;
-}
-.dropdown .dropdown-btn {
-  padding: 15px 20px;
-  background-color: #13c7df;
-  font-weight: bold;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  border-radius: 10px;
+.price-filter {
   text-align: center;
 }
-.dropdown .dropdown-content {
-  position: absolute;
-  top: 110%;
-  padding: 15px;
-  background-color: #13c7df;
-  font-weight: 500;
-  color: #fff;
-  width: 100%;
-  border-radius: 10px;
-  text-align: center;
-  z-index: 1;
-}
-.dropdown .dropdown-content .dropdown-item {
-  padding: 10px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.dropdown .dropdown-content .dropdown-item:hover {
-  background-color: #ffe600;
-  border-radius: 30px;
+.price-filter .title-filter {
+  margin-bottom: 10px;
   color: #4338ca;
 }
+.price-filter select {
+  width: 200px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  z-index: 1000;
+  color: #808080;
+  font-weight: 500;
+}
+.price-filter select:focus {
+  border-color: #007bff;
+}
+.price-filter select .select-items {
+  font-size: 14px;
+  padding: 10px 0;
+  border-radius: 2px !important;
+  height: 50px;
+}
+.price-filter select .select-items:hover {
+  background-color: #93c1ff;
+}
 
-.slider {
-  width: 100%;
-  height: 10px;
-  background-color: #13c7df;
+.category-filter {
+  text-align: center;
+}
+.category-filter .title-filter {
+  margin-bottom: 10px;
+  color: #4338ca;
 }
 
 .products {
@@ -566,6 +546,11 @@ footer .footer-col .social-links a:hover {
   flex-flow: wrap;
   justify-content: space-around;
   align-items: center;
+}
+.products .products-filter {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
 }
 
 .item-card {
@@ -613,7 +598,7 @@ footer .footer-col .social-links a:hover {
   font-size: 1rem;
 }
 .item-card .rating a {
-  color: #ffe600;
+  color: #fffb00;
 }
 .item-card .card-buttons {
   display: flex;
@@ -633,7 +618,7 @@ footer .footer-col .social-links a:hover {
   margin-top: 0.5rem;
 }
 .item-card .card-buttons .btn:hover {
-  background-color: #ffe600;
+  background-color: #fffb00;
   color: #4338ca;
 }
 .item-card .card-icons {
@@ -653,14 +638,14 @@ footer .footer-col .social-links a:hover {
   color: #fff;
   padding: 0.4rem;
   line-height: 1;
-  border: 1px solid #ffe600;
+  border: 1px solid #fffb00;
   border-radius: 10px;
   border-color: #13c7df;
   background: #13c7df;
 }
 .item-card .card-icons a:hover {
-  border-color: #ffe600;
-  background: #ffe600;
+  border-color: #fffb00;
+  background: #fffb00;
 }
 .item-card .card-icons .eye-icon {
   font-size: 1.3rem;
@@ -811,7 +796,7 @@ footer .footer-col .social-links a:hover {
   padding: 1rem;
   border-radius: 10px;
   justify-content: space-between;
-  background-color: #ffe600;
+  background-color: #fffb00;
 }
 .accordion .secContainer .single-container .heading .headingIcon {
   cursor: pointer;
@@ -952,7 +937,7 @@ footer .footer-col .social-links a:hover {
   font-size: 1rem;
 }
 .allproducts .all-container .allproducts-content .product-cart .item-card .rating a {
-  color: #ffe600;
+  color: #fffb00;
 }
 .allproducts .all-container .allproducts-content .product-cart .item-card .card-buttons {
   display: flex;
@@ -970,7 +955,7 @@ footer .footer-col .social-links a:hover {
   border-radius: 10px;
 }
 .allproducts .all-container .allproducts-content .product-cart .item-card .card-buttons .btn:hover {
-  background-color: #ffe600;
+  background-color: #fffb00;
   color: #4338ca;
 }
 .allproducts .all-container .allproducts-content .product-cart .item-card .card-buttons p {
@@ -993,14 +978,14 @@ footer .footer-col .social-links a:hover {
   color: #fff;
   padding: 0.4rem;
   line-height: 1;
-  border: 1px solid #ffe600;
+  border: 1px solid #fffb00;
   border-radius: 10px;
   border-color: #13c7df;
   background: #13c7df;
 }
 .allproducts .all-container .allproducts-content .product-cart .item-card .card-icons a:hover {
-  border-color: #ffe600;
-  background: #ffe600;
+  border-color: #fffb00;
+  background: #fffb00;
 }
 .allproducts .all-container .allproducts-content .product-cart .item-card .card-icons .eye-icon {
   font-size: 1.3rem;
@@ -1085,7 +1070,7 @@ footer .footer-col .social-links a:hover {
   font-size: 16px;
 }
 .product-detail .detail-container .productbox .detail button:hover {
-  background-color: #ffe600;
+  background-color: #fffb00;
   color: #4338ca;
   transition: 0.5s;
 }
@@ -1109,7 +1094,7 @@ footer .footer-col .social-links a:hover {
   border-radius: 10px;
 }
 .shopping-cart .emptycart .empty-btn:hover {
-  background-color: #ffe600;
+  background-color: #fffb00;
   transition: 0.2s;
 }
 .shopping-cart .cart-container .content {
@@ -1205,7 +1190,7 @@ footer .footer-col .social-links a:hover {
   cursor: pointer;
 }
 .shopping-cart .cart-container .checkout:hover {
-  background-color: #ffe600;
+  background-color: #fffb00;
   transition: 0.2s;
 }
 
@@ -1228,7 +1213,7 @@ footer .footer-col .social-links a:hover {
   border-radius: 10px;
 }
 .shopping-favorite .emptyfavorite .empty-btn:hover {
-  background-color: #ffe600;
+  background-color: #fffb00;
   transition: 0.2s;
 }
 .shopping-favorite .favorite-container {
@@ -1288,7 +1273,7 @@ footer .footer-col .social-links a:hover {
   color: #fff;
 }
 .shopping-favorite .favorite-container .content .favorite-item .detail .addtocart button:hover {
-  background-color: #ffe600;
+  background-color: #fffb00;
   transition: 0.2s;
 }
 .shopping-favorite .favorite-container .content .favorite-item .close .close-icon {

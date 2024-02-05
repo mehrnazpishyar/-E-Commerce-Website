@@ -15,13 +15,16 @@ const CategorieFilter = () => {
   }));
 
   return (
-    <Select
-    options={categoryOptions}
-    isClearable
-    placeholder="Select a category"
-    onChange={(selectOption) => setSelectedCategory(selectOption)}
-    value={selectedCategory}
-  />
+    <div className='category-filter'>
+        <h4 className='title-filter'>Filter By Category :</h4>
+        <Select
+        options={categoryOptions}
+        isClearable
+        placeholder="Select a category"
+        onChange={(selectOption) => setSelectedCategory(selectOption)}
+        value={selectedCategory}
+      />
+    </div>
   );
 };
 

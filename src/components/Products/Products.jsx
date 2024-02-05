@@ -1,10 +1,12 @@
 import ProductCategories from "../../components/ProductCategories/ProductCategories";
-import ProductsFilter from "../../components/ProductFilters/ProductsFilter";
 import { useContext } from "react";
 import { AppContext } from "../context/AppProvider";
 import Loader from "../Loader/Loader";
 import ProductsItems from "./ProductsItems";
 import ProductDetail from "../../components/ProductDetail/ProductDetail";
+import CategorieFilter from "../ProductFilters/CategorieFilter";
+import PriceFilter from "../ProductFilters/PriceFilter";
+
 
 const Products = () => {
   const { isLoading, allProducts, query, selectedCategory } =
@@ -24,8 +26,10 @@ const Products = () => {
       <div className="title">
         <h1>Products Filter</h1>
       </div>
-
-      <ProductsFilter />
+      <div className="products-filter">
+        <CategorieFilter />
+        <PriceFilter />
+      </div>
       <div className="shop-container">
         <div className="product-cart">
           {isLoading ? (

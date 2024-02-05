@@ -8,7 +8,7 @@ header {
   z-index: 1000;
   border-bottom: 1px solid $color-gray-light;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
- left: 0;
+  left: 0;
 
   .tn-container {
     display: flex;
@@ -99,13 +99,15 @@ header {
 
       .count {
         position: absolute;
-        top: -0.6rem;
+        top: -0.8rem;
         right: -0.6rem;
         font-size: 0.8rem;
         font-weight: 500;
-        line-height: 1;
-        padding: 2px 4px;
         border-radius: 3px;
+        color: $color-red;
+        background-color: $color-yellow;
+        border-radius: 50px;
+        padding: 0px 5px;
       }
 
       .cart-user {
@@ -113,9 +115,9 @@ header {
         color: $color-purple;
         font-size: 1.3rem;
         font-weight: 500;
+        padding-top: 4px;
 
         .user {
-          margin-left: 5px;
           font-size: 15px;
         }
       }
@@ -140,7 +142,7 @@ header {
         border-radius: 6px;
         padding: 5px;
 
-        /* Position the tooltip */
+        /* tooltip */
         position: absolute;
         z-index: 1;
         top: -100%;
