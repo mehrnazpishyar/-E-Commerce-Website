@@ -1,10 +1,10 @@
-import ProductCategories from "./ProductCategories/ProductCategories";
-import ProductsFilter from "./ProductFilters/ProductsFilter";
+import ProductCategories from "../../components/ProductCategories/ProductCategories";
+import ProductsFilter from "../../components/ProductFilters/ProductsFilter";
 import { useContext } from "react";
 import { AppContext } from "../context/AppProvider";
 import Loader from "../Loader/Loader";
 import ProductsItems from "./ProductsItems";
-import ProductDetail from "./ProductDetail/ProductDetail";
+import ProductDetail from "../../components/ProductDetail/ProductDetail";
 
 const Products = () => {
   const { isLoading, allProducts, query, selectedCategory } =
@@ -22,7 +22,7 @@ const Products = () => {
       <ProductCategories />
       <hr />
       <div className="title">
-        <h1>All Products</h1>
+        <h1>Products Filter</h1>
       </div>
 
       <ProductsFilter />

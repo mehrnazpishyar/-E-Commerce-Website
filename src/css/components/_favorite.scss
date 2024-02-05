@@ -1,12 +1,12 @@
 @import "../abstracts/variables";
 
-.shopping-cart {
+.shopping-favorite {
   margin-top: 90px;
   text-align: center;
   display: flex;
   justify-content: center;
 
-  .emptycart {
+  .emptyfavorite {
     h2 {
       font-size: 32px;
       text-transform: uppercase;
@@ -27,12 +27,14 @@
     }
   }
 
-  .cart-container {
+  .favorite-container {
+    text-align: center;
+
     .content {
       max-width: 100%;
       padding: 20px 30px;
 
-      .cart-item {
+      .favorite-item {
         padding: 20px 30px;
         display: flex;
         justify-content: space-around;
@@ -55,6 +57,7 @@
         .detail {
           margin-left: 20px;
           display: flex;
+          flex-direction: column;
           margin-top: 30px;
           padding: 20px 30px;
 
@@ -73,42 +76,28 @@
             }
 
             p {
-              margin-top: 10px;
+              margin-top: 20px;
               letter-spacing: 1px;
-            }
-
-            .qty {
-              margin-top: 10px;
-              display: flex;
-              justify-content: center;
-
-              .inc,
-              .dec {
-                padding: 10px;
-                outline: none;
-                border: none;
-                color: $color-blue;
-                font-size: 32px;
-                cursor: pointer;
-              }
-
-              input {
-                border: none;
-                outline: none;
-                background-color: none;
-                font-size: 22px;
-                width: 50px;
-                padding: 15px;
-              }
-            }
-
-            .subtotal {
-              font-size: 18px;
-              margin-top: 10px;
               color: $color-purple;
+              font-weight: 500;
+            }
+          }
+          .addtocart {
+            button {
+              margin-top: 30px;
+              padding: 10px 20px;
+              background-color: $color-blue;
+              border-radius: 10px;
+              color: $color-white;
+
+              &:hover {
+                background-color: $color-yellow;
+                transition: 0.2s;
+              }
             }
           }
         }
+
         .close {
           .close-icon {
             font-size: 22px;
@@ -121,25 +110,6 @@
             cursor: pointer;
           }
         }
-      }
-    }
-    .totalprice {
-      font-size: 24px;
-      margin-top: 20px;
-      color: $color-purple;
-    }
-
-    .checkout {
-      padding: 10px 20px;
-      background-color: $color-blue;
-      border-radius: 10px;
-      margin-top: 20px;
-      color: $color-white;
-      cursor: pointer;
-
-      &:hover {
-        background-color: $color-yellow;
-        transition: 0.2s;
       }
     }
   }

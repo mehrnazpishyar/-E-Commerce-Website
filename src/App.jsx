@@ -7,6 +7,7 @@ import Home from "./components/Home/Home";
 import { Toaster } from "react-hot-toast";
 import AppProvider from './components/context/AppProvider'
 import Cart from "./components/Cart/Cart";
+import Favorite from "./components/Favorite/Favorite";
 
 function App() {
   
@@ -19,6 +20,7 @@ function App() {
         <Route path="/all" element={  <AllProducts/>}/>
         <Route path="/download" element={  <DownloadApp/>}/>
         <Route path="/cart" element={  <Cart/>}/>
+        <Route path="/favorite" element={  <Favorite/>}/>
       </Routes>
       <Footer />
       </AppProvider>

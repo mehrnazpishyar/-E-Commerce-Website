@@ -586,7 +586,7 @@ footer .footer-col .social-links a:hover {
 }
 .products .shop-container .product-cart .item-card h5 {
   font-weight: 500;
-  margin: 1rem 0 0.5rem;
+  margin: 1rem 0 1rem;
   font-size: 14px;
   text-transform: capitalize;
   color: #000;
@@ -594,7 +594,8 @@ footer .footer-col .social-links a:hover {
 .products .shop-container .product-cart .item-card p {
   color: #64748b;
   text-transform: capitalize;
-  font-size: 14px;
+  font-size: 13px;
+  margin-top: 0.7rem;
 }
 .products .shop-container .product-cart .item-card .price {
   text-align: center;
@@ -619,6 +620,7 @@ footer .footer-col .social-links a:hover {
   gap: 0.5rem;
 }
 .products .shop-container .product-cart .item-card .card-buttons .btn {
+  width: 120px;
   font-size: 0.7rem;
   font-weight: 500;
   text-transform: capitalize;
@@ -627,6 +629,7 @@ footer .footer-col .social-links a:hover {
   background-color: #13c7df;
   color: #fff;
   border-radius: 10px;
+  margin-top: 0.5rem;
 }
 .products .shop-container .product-cart .item-card .card-buttons .btn:hover {
   background-color: #ffe600;
@@ -844,6 +847,9 @@ footer .footer-col .social-links a:hover {
   border-radius: 10px 10px 0 0;
 }
 
+.allproducts {
+  position: relative;
+}
 .allproducts h2 {
   margin-top: 20px;
 }
@@ -892,6 +898,7 @@ footer .footer-col .social-links a:hover {
   color: #4338ca;
 }
 .allproducts .all-container .allproducts-content {
+  position: relative;
   margin-top: 30px;
 }
 .allproducts .all-container .allproducts-content .product-cart {
@@ -1050,7 +1057,7 @@ footer .footer-col .social-links a:hover {
   border-radius: 4px;
 }
 .product-detail .detail-container .productbox .detail {
-  margin-left: 20px;
+  margin-left: 30px;
 }
 .product-detail .detail-container .productbox .detail h4 {
   color: #888;
@@ -1107,7 +1114,6 @@ footer .footer-col .social-links a:hover {
 .shopping-cart .cart-container .content {
   max-width: 100%;
   padding: 20px 30px;
-  position: relative;
 }
 .shopping-cart .cart-container .content .cart-item {
   padding: 20px 30px;
@@ -1118,30 +1124,30 @@ footer .footer-col .social-links a:hover {
   margin-top: 10px;
   margin-bottom: 10px;
   border: 1px solid #4338ca;
-  width: 900px;
+  width: 700px;
 }
 .shopping-cart .cart-container .content .cart-item .image-box {
   padding: 20px 30px;
 }
 .shopping-cart .cart-container .content .cart-item .image-box img {
-  width: 200px;
-  height: 220px;
+  width: 150px;
+  height: 180px;
 }
 .shopping-cart .cart-container .content .cart-item .detail {
-  margin-left: 30px;
+  margin-left: 20px;
   display: flex;
   margin-top: 30px;
   padding: 20px 30px;
 }
 .shopping-cart .cart-container .content .cart-item .detail .info h4 {
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 1.5px;
   color: #64748b;
 }
 .shopping-cart .cart-container .content .cart-item .detail .info h3 {
   margin-top: 20px;
-  font-size: 22px;
+  font-size: 16px;
   letter-spacing: 1px;
 }
 .shopping-cart .cart-container .content .cart-item .detail .info p {
@@ -1171,20 +1177,16 @@ footer .footer-col .social-links a:hover {
   padding: 15px;
 }
 .shopping-cart .cart-container .content .cart-item .detail .info .subtotal {
-  font-size: 22px;
+  font-size: 18px;
   margin-top: 10px;
   color: #4338ca;
 }
-.shopping-cart .cart-container .content .cart-item .detail .close {
-  position: absolute;
-  top: 50px;
-  right: 50px;
+.shopping-cart .cart-container .content .cart-item .close .close-icon {
   font-size: 22px;
 }
-.shopping-cart .cart-container .content .cart-item .detail .close button:hover {
+.shopping-cart .cart-container .content .cart-item .close button:hover {
   border: none;
   outline: none;
-  font-size: 22px;
   color: #ff0000;
   cursor: pointer;
 }
@@ -1204,4 +1206,96 @@ footer .footer-col .social-links a:hover {
 .shopping-cart .cart-container .checkout:hover {
   background-color: #ffe600;
   transition: 0.2s;
+}
+
+.shopping-favorite {
+  margin-top: 90px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.shopping-favorite .emptyfavorite h2 {
+  font-size: 32px;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+.shopping-favorite .emptyfavorite .empty-btn {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #13c7df;
+  border-radius: 10px;
+}
+.shopping-favorite .emptyfavorite .empty-btn:hover {
+  background-color: #ffe600;
+  transition: 0.2s;
+}
+.shopping-favorite .favorite-container {
+  text-align: center;
+}
+.shopping-favorite .favorite-container .content {
+  max-width: 100%;
+  padding: 20px 30px;
+}
+.shopping-favorite .favorite-container .content .favorite-item {
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #4338ca;
+  width: 700px;
+}
+.shopping-favorite .favorite-container .content .favorite-item .image-box {
+  padding: 20px 30px;
+}
+.shopping-favorite .favorite-container .content .favorite-item .image-box img {
+  width: 150px;
+  height: 180px;
+}
+.shopping-favorite .favorite-container .content .favorite-item .detail {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  padding: 20px 30px;
+}
+.shopping-favorite .favorite-container .content .favorite-item .detail .info h4 {
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  color: #64748b;
+}
+.shopping-favorite .favorite-container .content .favorite-item .detail .info h3 {
+  margin-top: 20px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.shopping-favorite .favorite-container .content .favorite-item .detail .info p {
+  margin-top: 20px;
+  letter-spacing: 1px;
+  color: #4338ca;
+  font-weight: 500;
+}
+.shopping-favorite .favorite-container .content .favorite-item .detail .addtocart button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #13c7df;
+  border-radius: 10px;
+  color: #fff;
+}
+.shopping-favorite .favorite-container .content .favorite-item .detail .addtocart button:hover {
+  background-color: #ffe600;
+  transition: 0.2s;
+}
+.shopping-favorite .favorite-container .content .favorite-item .close .close-icon {
+  font-size: 22px;
+}
+.shopping-favorite .favorite-container .content .favorite-item .close button:hover {
+  border: none;
+  outline: none;
+  color: #ff0000;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

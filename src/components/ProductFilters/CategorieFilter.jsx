@@ -1,6 +1,6 @@
 import Select from 'react-select'
 import { useContext } from "react";
-import { AppContext } from "../../context/AppProvider";
+import { AppContext } from "../context/AppProvider";
 
 const CategorieFilter = () => {
   const { allProducts,selectedCategory, setSelectedCategory } = useContext(AppContext);

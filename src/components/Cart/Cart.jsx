@@ -3,6 +3,7 @@ import { AppContext } from "../context/AppProvider";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { Link } from "react-router-dom";
 
+
 const Cart = () => {
   const { cart, setCart } = useContext(AppContext);
 
@@ -31,6 +32,7 @@ const Cart = () => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== product.id));
   };
 
+  // Calculate the total price
   const totalPrice = cart.reduce(
     (price, item) => price + item.qty * item.price,
     0
@@ -71,12 +73,12 @@ const Cart = () => {
                       Subtotal: $ {item.price * item.qty}
                     </h4>
                   </div>
+                </div>
                   <div className="close">
                     <button onClick={() => removeProduct(item)}>
-                      <IoMdCloseCircleOutline />
+                      <IoMdCloseCircleOutline className="close-icon" />
                     </button>
                   </div>
-                </div>
               </div>
             ))}
           </div>

@@ -3,7 +3,9 @@ import { AppContext } from "../context/AppProvider";
 import Loader from "../Loader/Loader";
 import ProductsItems from "../Products/ProductsItems";
 
+
 const AllProducts = () => {
+
   const {
     isLoading,
     query,

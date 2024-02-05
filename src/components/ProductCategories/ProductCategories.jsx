@@ -1,4 +1,4 @@
-import { categoryData } from "../../../constants";
+import { categoryData } from "../../constants";
 import CategoriesCard from "./CategoriesCard";
 
 const ProductCategories = () => {

@@ -1,6 +1,7 @@
 @import "../abstracts/variables";
 
 .allproducts {
+  position: relative;
   h2 {
     margin-top: 20px;
   }
@@ -60,6 +61,7 @@
     }
 
     .allproducts-content {
+      position: relative;
       margin-top: 30px;
 
       .product-cart {

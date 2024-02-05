@@ -15,6 +15,7 @@ export default function AppProvider({ children }) {
   const [detail, setDetail] = useState([]);
   const [closeModal, setCloseModal] = useState(false);
   const [cart, setCart] = useState([]);
+  const [favorite, setFavorite] = useState([]);
   
 
   // --------- fetch Data -----------
@@ -57,6 +58,24 @@ export default function AppProvider({ children }) {
       toast.success("Product is added to cart")
     }
   };
+
+
+  //------------ add to favorite-------------
+
+  const addToFavorite = (product) => {
+    const exsit = favorite.find((x) => {
+      return x.id === product.id;
+    });
+
+    if (exsit) {
+      toast.success("This Product is already added to Favorite!");
+    } else {
+      setFavorite([...favorite, { ...product, qty: 1 }]);
+      toast.success("Product is added to Favorite")
+    }
+  };
+
+
  
 
 
@@ -82,6 +101,9 @@ export default function AppProvider({ children }) {
         cart,
         setCart,
         addToCart,
+        addToFavorite,
+        favorite,
+        setFavorite
       }}
     >
       {children}

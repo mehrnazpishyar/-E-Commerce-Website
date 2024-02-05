@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AppContext } from "../../context/AppProvider";
+import { AppContext } from "../context/AppProvider";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 
 const ProductDetail = () => {

@@ -5,10 +5,18 @@ import { PiEye } from "react-icons/pi";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AppContext } from "../context/AppProvider";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const ProductsItems = ({ item }) => {
-  const { viewDetail, addToCart,cart} = useContext(AppContext);
-  const isAdd = cart.some((cartItem) => cartItem.id === item.id);
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
+  const { viewDetail, addToCart, cart,addToFavorite,favorite  } = useContext(AppContext);
+
+
+  
+  const isAddToCart = cart.some((cartItem) => cartItem.id === item.id);
+  const isAddToFavorite = favorite.some((cartItem) => cartItem.id === item.id);
+ 
+
   return (
     <div className="item-card">
       <img src={item.image} alt="products" />
@@ -23,25 +31,43 @@ const ProductsItems = ({ item }) => {
         <span>${item.price}</span>
       </div>
       <div className="card-buttons">
-        
-      {isAdd ? (
-          <p>Already Added! ✅</p>
+        {isAuthenticated ? (
+          isAddToCart ? (
+            <p>Already Added to 🛒</p>
+          ) : (
+            <button className="btn" onClick={() => addToCart(item)}>
+              Add to Cart
+            </button>
+          )
         ) : (
-          <button className="btn" onClick={() => addToCart(item)}>
+          <button className="btn" onClick={loginWithRedirect}>
             Add to Cart
           </button>
         )}
-        <button className="btn">Add to Favorite</button>
+
+        {isAuthenticated ? (
+          isAddToFavorite ? (
+            <p>Already Added to ❤️</p>
+          ) : (
+            <button className="btn" onClick={() => addToFavorite(item)}>
+               Add to Favorite
+            </button>
+          )
+        ) : (
+          <button className="btn" onClick={loginWithRedirect}>
+          Add to Favorite
+          </button>
+        )}
       </div>
       <div className="card-icons">
-        <Link to="">
+        <Link to="" onClick={() => addToFavorite(item)}>
           <FaRegHeart />
         </Link>
-        <Link to=""  onClick={() =>{viewDetail(item)}}>
-          <PiEye className="eye-icon"  />
+        <Link to="" onClick={() => viewDetail(item)}>
+          <PiEye className="eye-icon" />
         </Link>
-        <Link to="">
-          <TiShoppingCart onClick={() =>{addToCart(item)}}/>
+        <Link to="" onClick={() => addToCart(item)}>
+          <TiShoppingCart  />
         </Link>
       </div>
     </div>
