@@ -1,8 +1,9 @@
-// _accordion.scss
+
 
 @import "../abstracts/variables";
 
 .accordion {
+  z-index: 1000;
   .title {
     color: $color-purple;
     font-weight: 700;

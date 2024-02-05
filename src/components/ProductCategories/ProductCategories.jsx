@@ -1,7 +1,10 @@
 import { categoryData } from "../../constants";
 import CategoriesCard from "./CategoriesCard";
+import { useContext } from "react";
+import { AppContext } from "../context/AppProvider";
 
 const ProductCategories = () => {
+  const {  } = useContext(AppContext);
   return (
     <div className="categories">
       <div className="title">

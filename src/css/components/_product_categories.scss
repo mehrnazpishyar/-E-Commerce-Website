@@ -15,14 +15,10 @@
     max-width: 100%;
 
     .categories-card {
-      cursor: pointer;
+    
 
       h2 {
         padding-top: 10px;
-
-        &:hover {
-          color: $color-blue;
-        }
       }
 
       .img-box {
@@ -40,10 +36,6 @@
           justify-content: center;
           margin-top: 25px;
           transition: 0.5s;
-
-          &:hover {
-            transform: scale(1.2);
-          }
         }
       }
     }

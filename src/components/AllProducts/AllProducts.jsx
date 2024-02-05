@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AppContext } from "../context/AppProvider";
 import Loader from "../Loader/Loader";
 import ProductsItems from "../Products/ProductsItems";
+import ProductDetail from "../ProductDetail/ProductDetail";
 
 
 const AllProducts = () => {
@@ -16,6 +17,7 @@ const AllProducts = () => {
 
   return (
     <div className="allproducts">
+      <ProductDetail />
       <h2># Products</h2>
       <div className="all-container">
         <div className="filter">

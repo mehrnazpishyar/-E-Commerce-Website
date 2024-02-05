@@ -11,7 +11,7 @@ import { AppContext } from "../context/AppProvider";
 const Navbar = () => {
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
   const { query, setQuery, favorite, cart } = useContext(AppContext);
-
+  console.log(isAuthenticated)
 
   return (
     <header>

@@ -9,6 +9,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const ProductsItems = ({ item }) => {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
+
+  console.log(isAuthenticated)
   const { viewDetail, addToCart, cart, addToFavorite, favorite } =
     useContext(AppContext);
 
