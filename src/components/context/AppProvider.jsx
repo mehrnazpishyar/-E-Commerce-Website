@@ -54,6 +54,7 @@ export default function AppProvider({ children }) {
       toast.success("This Product is already added to cart!");
     } else {
       setCart([...cart, { ...product, qty: 1 }]);
+      setCloseModal(false);
       toast.success("Product is added to cart");
     }
   };

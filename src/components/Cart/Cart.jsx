@@ -1,36 +1,11 @@
-import { useContext } from "react";
-import { AppContext } from "../context/AppProvider";
-import { IoMdCloseCircleOutline } from "react-icons/io";
 import { Link } from "react-router-dom";
-
+import CartItem from "./CartItem";
+import { useContext, useState } from "react";
+import { AppContext } from "../context/AppProvider";
 
 const Cart = () => {
-  const { cart, setCart } = useContext(AppContext);
-
-  // Increase quantity
-  const incQty = (product) => {
-    setCart((prevCart) =>
-      prevCart.map((item) =>
-        item.id === product.id ? { ...item, qty: item.qty + 1 } : item
-      )
-    );
-  };
-
-  // Decrease quantity
-  const decQty = (product) => {
-    setCart((prevCart) =>
-      prevCart.map((item) =>
-        item.id === product.id && item.qty > 1
-          ? { ...item, qty: item.qty - 1 }
-          : item
-      )
-    );
-  };
-
-  // Remove product from cart
-  const removeProduct = (product) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== product.id));
-  };
+  const { cart } = useContext(AppContext);
+  const [isClick, setIsClick] = useState(false);
 
   // Calculate the total price
   const totalPrice = cart.reduce(
@@ -38,53 +13,46 @@ const Cart = () => {
     0
   );
 
+  // Change button to p tag
+  const handleButtonClick = () => {
+    setIsClick(true);
+  };
+
   return (
-    <div className="shopping-cart">
+    <div className="cart-container">
       {cart.length === 0 ? (
         <div className="emptycart">
-          <h2 className="empty">Cart is Empty</h2>
+          <h1 className="empty">Cart is Empty</h1>
           <Link to="/all" className="empty-btn">
             Shop Now
           </Link>
         </div>
       ) : (
-        <div className="cart-container">
-          <div className="content">
-            {cart.map((item) => (
-              <div className="cart-item" key={item.id}>
-                <div className="image-box">
-                  <img src={item.image} alt={item.title} />
-                </div>
-                <div className="detail">
-                  <div className="info">
-                    <h4>{item.category}</h4>
-                    <h3>{item.title}</h3>
-                    <p>Price : ${item.price}</p>
-                    <div className="qty">
-                      <button className="inc" onClick={() => incQty(item)}>
-                        +
-                      </button>
-                      <input type="text" value={item.qty} readOnly />
-                      <button className="dec" onClick={() => decQty(item)}>
-                        -
-                      </button>
-                    </div>
-                    <h4 className="subtotal">
-                      Subtotal: $ {item.price * item.qty}
-                    </h4>
-                  </div>
-                </div>
-                  <div className="close">
-                    <button onClick={() => removeProduct(item)}>
-                      <IoMdCloseCircleOutline className="close-icon" />
-                    </button>
-                  </div>
-              </div>
-            ))}
-          </div>
-          <div className="total-container">
-            <h2 className="totalprice">Total : $ {totalPrice}</h2>
-            <button className="checkout">Checkout</button>
+        <div className="cart-main">
+          <CartItem />
+          <div className="checkout">
+            <div className="checkout-content">
+              <h2>Cart Totals</h2>
+              <p>
+                Subtotal
+                <span>${totalPrice}</span>
+              </p>
+              <p className="shipping">
+                Shipping
+                <span>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Facilis, fugit!
+                </span>
+              </p>
+            </div>
+            <p className="total-price">
+              Total <span>${totalPrice}</span>
+            </p>
+            {isClick ? (
+              <p className="purchase">Congratulations! The purchase was successful.</p>
+            ) : (
+              <button onClick={handleButtonClick}>Checkout</button>
+            )}
           </div>
         </div>
       )}

@@ -3,7 +3,7 @@ import { AppContext } from "../context/AppProvider";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 
 const ProductDetail = () => {
-  const { detail, closeModal, setCloseModal } = useContext(AppContext);
+  const { detail, closeModal, setCloseModal,addToCart } = useContext(AppContext);
 
   return (
     <>
@@ -31,7 +31,7 @@ const ProductDetail = () => {
                       <h4>{item.category}</h4>
                       <h2>{item.title}</h2>
                       <h3>{item.price}</h3>
-                      <button>Add To Cart</button>
+                      <button onClick={() => addToCart(item)}>Add To Cart</button>
                     </div>
                   </div>
                 );

@@ -1,146 +1,248 @@
 @import "../abstracts/variables";
 
-.shopping-cart {
-  margin-top: 90px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-
+.cart-container {
   .emptycart {
-    h2 {
-      font-size: 32px;
-      text-transform: uppercase;
-      font-weight: 300;
-      margin-bottom: 30px;
+    margin-top: 250px;
+    text-align: center;
+
+    h1 {
+      margin-bottom: 35px;
+      letter-spacing: 5px;
     }
 
     .empty-btn {
-      margin-top: 30px;
-      padding: 10px 20px;
+      padding: 0.75rem 1rem;
       background-color: $color-blue;
-      border-radius: 10px;
+      border-radius: 8px;
 
       &:hover {
-        background-color: $color-yellow;
+        background: $color-blue-light;
         transition: 0.2s;
       }
     }
   }
-
-  .cart-container {
+  .cart-main {
+    width: 100%;
+    height: 15rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 5rem 0;
     display: flex;
-    .content {
-      max-width: 100%;
-      padding: 20px 30px;
 
-      .cart-item {
-        padding: 20px 30px;
+    .checkout {
+      background-color: $color-gray-light;
+      width: 33.333333%;
+      height: 100vh;
+      padding: 1.5rem;
+
+      .checkout-content {
         display: flex;
-        justify-content: space-around;
-        background-color: $color-white;
-        border-radius: 5px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        border: 1px solid $color-purple;
-        width: 700px;
+        flex-direction: column;
+        border-bottom: 1px solid $color-gray-medium;
+        padding-bottom: 1.5rem;
 
-        .image-box {
-          padding: 20px 30px;
-
-          img {
-            width: 150px;
-            height: 180px;
-          }
+        h2 {
+          font-size: 1.5rem;
+          line-height: 2rem;
+          font-weight: 500;
         }
 
-        .detail {
-          margin-left: 20px;
+        .shipping {
           display: flex;
-          margin-top: 30px;
-          padding: 20px 30px;
+          align-items: start;
+          gap: 1rem;
+          font-size: 1rem;
+          line-height: 1.5rem;
 
-          .info {
-            h4 {
-              text-transform: uppercase;
-              font-size: 14px;
-              letter-spacing: 1.5px;
-              color: $color-gray-dark;
-            }
-
-            h3 {
-              margin-top: 20px;
-              font-size: 16px;
-              letter-spacing: 1px;
-            }
-
-            p {
-              margin-top: 10px;
-              letter-spacing: 1px;
-            }
-
-            .qty {
-              margin-top: 10px;
-              display: flex;
-              justify-content: center;
-
-              .inc,
-              .dec {
-                padding: 10px;
-                outline: none;
-                border: none;
-                color: $color-blue;
-                font-size: 32px;
-                cursor: pointer;
-              }
-
-              input {
-                border: none;
-                outline: none;
-                background-color: none;
-                font-size: 22px;
-                width: 50px;
-                padding: 15px;
-              }
-            }
-
-            .subtotal {
-              font-size: 18px;
-              margin-top: 10px;
-              color: $color-purple;
-            }
+          span {
+            font-size: 14px;
           }
         }
-        .close {
-          .close-icon {
-            font-size: 22px;
-          }
 
-          button:hover {
-            border: none;
-            outline: none;
-            color: $color-red;
-            cursor: pointer;
+        p {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          font-size: 1rem;
+          line-height: 1.5rem;
+
+          span {
+            font-weight: 500;
+            font-size: 1.125rem;
+            line-height: 1.75rem;
           }
         }
       }
-    }
-    .totalprice {
-      font-size: 24px;
-      margin-top: 20px;
-      color: $color-purple;
+
+      .total-price {
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1.5rem;
+        span {
+          font-size: 1.25rem;
+          line-height: 1.75rem;
+          font-weight: 500;
+        }
+
+       
+      }
+
+      button {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+        background: $color-black;
+        color: $color-white;
+        width: 100%;
+        padding: 0.75rem 0;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: $color-gray-dark;
+          color: $color-black;
+          transition-duration: 300ms;
+        }
+      }
+      .purchase{
+        text-align: center;
+        margin-top: 40px;
+        color: $color-purple;
+        font-size: 15px;
+        font-weight: 500;
+      }
     }
 
-    .checkout {
-      padding: 10px 20px;
-      background-color: $color-blue;
-      border-radius: 10px;
-      margin-top: 20px;
-      color: $color-white;
-      cursor: pointer;
+    .cart-items {
+      width: 66.666667%;
+      padding-right: 2.5rem;
 
-      &:hover {
-        background-color: $color-yellow;
-        transition: 0.2s;
+      .cart-main {
+        width: 100%;
+      }
+
+      h2 {
+        margin-left: 15px;
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+
+      .cart-products {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        margin-top: 3rem;
+
+        .close-icon {
+          font-size: 1.25rem;
+          line-height: 1.75rem;
+          color: $color-gray-dark;
+          margin-right: 1rem;
+
+          &:hover {
+            color: $color-red;
+            cursor: pointer;
+            transition-duration: 300ms;
+          }
+        }
+
+        img {
+          width: 8rem;
+          height: 9.5rem;
+        }
+        .cartitem-content {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        h4 {
+          width: 13rem;
+        }
+
+        p {
+          width: 2.5rem;
+        }
+
+        .buttons-box {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          font-size: 14px;
+          font-weight: 300;
+
+          button {
+            border: 1px solid $color-gray-medium;
+            height: 1.25rem;
+            font-weight: 400;
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 0.5rem;
+            cursor: pointer;
+            transition-duration: 300ms;
+            border-radius: 4px;
+
+            &:hover {
+              background: $color-gray-dark;
+              color: $color-white;
+            }
+
+            &:active {
+              background: $color-black;
+            }
+          }
+
+          .trash-icon {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            color: $color-gray-dark;
+
+            &:hover {
+              color: $color-red;
+              cursor: pointer;
+              transition-duration: 300ms;
+            }
+          }
+        }
+        .total-qty {
+          width: 3.5rem;
+        }
+      }
+      .reset {
+        background: $color-red;
+        font-size: 14px;
+        color: $color-white;
+        margin-top: 50px;
+        margin-left: 2rem;
+        padding: 0.5rem 1rem;
+        transition-duration: 300ms;
+        border-radius: 5px;
+        margin-bottom: 10px;
+
+        &:hover {
+          background: $color-red-light;
+        }
+      }
+
+      .arrow-shop {
+        display: flex;
+        margin-left: 30px;
+        margin-top: 10px;
+
+        .go-shop {
+          width: 120px;
+          font-size: 13px;
+          cursor: pointer;
+          color: $color-gray-dark;
+          margin-left: 6px;
+        }
+
+        .arrow-icon {
+          color: $color-gray-dark;
+        }
       }
     }
   }

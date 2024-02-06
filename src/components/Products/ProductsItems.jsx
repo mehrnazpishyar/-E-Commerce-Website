@@ -59,23 +59,21 @@ const ProductsItems = ({ item }) => {
           </button>
         )}
 
-        {isAddToFavorite ? (
-          <p>Already Added to ❤️</p>
-        ) : (
-          <button className="btn" onClick={() => handleAddToFavorite(item)}>
-            Add to Favorite
-          </button>
-        )}
       </div>
       <div className="card-icons">
+        {isAuthenticated ? 
         <Link to="" onClick={() => addToFavorite(item)}>
           <FaRegHeart />
         </Link>
+        :
+        <Link to="" onClick={() => handleAddToFavorite(item)}>
+          <FaRegHeart />
+        </Link>
+        
+
+        }
         <Link to="" onClick={() => viewDetail(item)}>
           <PiEye className="eye-icon" />
-        </Link>
-        <Link to="" onClick={() => addToCart(item)}>
-          <TiShoppingCart />
         </Link>
       </div>
     </div>
