@@ -10,12 +10,32 @@ import { useAuth0 } from "@auth0/auth0-react";
 const ProductsItems = ({ item }) => {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
 
-  console.log(isAuthenticated)
+  console.log(isAuthenticated);
   const { viewDetail, addToCart, cart, addToFavorite, favorite } =
     useContext(AppContext);
 
   const isAddToCart = cart.some((cartItem) => cartItem.id === item.id);
   const isAddToFavorite = favorite.some((cartItem) => cartItem.id === item.id);
+
+  const handleAddToCart = () => {
+    if (isAuthenticated) {
+      if (!isAddToCart) {
+        addToCart(item);
+      }
+    } else {
+      loginWithRedirect();
+    }
+  };
+
+  const handleAddToFavorite = () => {
+    if (isAuthenticated) {
+      if (!isAddToFavorite) {
+        addToFavorite(item);
+      }
+    } else {
+      loginWithRedirect();
+    }
+  };
 
   return (
     <div className="item-card">
@@ -31,30 +51,18 @@ const ProductsItems = ({ item }) => {
         <span>${item.price}</span>
       </div>
       <div className="card-buttons">
-        {isAuthenticated ? (
-          isAddToCart ? (
-            <p>Already Added to 🛒</p>
-          ) : (
-            <button className="btn" onClick={() => addToCart(item)}>
-              Add to Cart
-            </button>
-          )
+        {isAddToCart ? (
+          <p>Already Added to 🛒</p>
         ) : (
-          <button className="btn" onClick={loginWithRedirect}>
+          <button className="btn" onClick={() => handleAddToCart(item)}>
             Add to Cart
           </button>
         )}
 
-        {isAuthenticated ? (
-          isAddToFavorite ? (
-            <p>Already Added to ❤️</p>
-          ) : (
-            <button className="btn" onClick={() => addToFavorite(item)}>
-              Add to Favorite
-            </button>
-          )
+        {isAddToFavorite ? (
+          <p>Already Added to ❤️</p>
         ) : (
-          <button className="btn" onClick={loginWithRedirect}>
+          <button className="btn" onClick={() => handleAddToFavorite(item)}>
             Add to Favorite
           </button>
         )}

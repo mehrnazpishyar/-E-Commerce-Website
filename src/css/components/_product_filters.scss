@@ -8,41 +8,34 @@
     color: $color-purple;
   }
 
-
-    select {
-      width: 200px;
-      padding: 8px;
-      font-size: 14px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      cursor: pointer;
-      outline: none;
+  select {
+   
+    width: 230px;
+ padding: 8px 0 8px 40px;
+    font-size: 14px;
+    border: 2px solid $color-gray-light;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
     z-index: 1000;
-      color: #808080;
-      font-weight: 500;
+    color: #808080;
+    font-weight: 500;
 
-      &:focus {
-        border-color: #007bff; 
-      }
-
-      .select-items {
-        font-size: 14px;
-        padding: 10px 0;
-      
-        border-radius: 2px !important;
-        height: 50px;
-  
-        &:hover{
-          background-color: #93c1ff;
-        }
-      }
+    &:focus {
+      border-color: #007bff;
     }
 
+    .select-items {
+      font-size: 14px;
+      border-radius: 2px !important;
+      height: 50px;
 
+      &:hover {
+        background-color: #93c1ff;
+      }
+    }
   }
-
-
-
+}
 
 .category-filter {
   text-align: center;

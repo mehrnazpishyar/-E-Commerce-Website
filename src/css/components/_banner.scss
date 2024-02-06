@@ -1,0 +1,63 @@
+@import "../abstracts/variables";
+
+.banner-container {
+  margin-top: 55px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+
+  .banner {
+    width: 100vw;
+    height: 650px;
+    position: relative;
+
+    .banner-main {
+      display: flex;
+      width: 400vw;
+      height: 100%;
+      transition-property: transform;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 1000ms;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .arrow-section {
+      display: flex;
+      position: absolute;
+      width: fit-content;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      gap: 2rem;
+      bottom: 5rem;
+
+      .arrow-left,
+      .arrow-right {
+        width: 3.5rem;
+        height: 3rem;
+        border: 2px solid $color-gray-light;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition-duration: 300ms;
+        color:$color-white;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $color-gray-dark;
+          color: $color-black;
+        }
+
+        &:active {
+          background-color: $color-purple;
+        }
+      }
+    }
+  }
+}

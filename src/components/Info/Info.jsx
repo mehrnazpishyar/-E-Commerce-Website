@@ -1,4 +1,4 @@
-import pic from "../../../public/online.jpg";
+import pic from "../../../public/man.png";
 import { useEffect, useState } from "react";
 
 const Info = () => {
@@ -66,9 +66,9 @@ const Info = () => {
 
   return (
     <div className="info-section container">
-      <h2 className={`title ${topToBottom ? "topToBottom" : ""}`}>
+      <h1 className={`title ${topToBottom ? "topToBottom" : ""}`}>
         Online Shop
-      </h2>
+      </h1>
       <div className="main">
         <div className={`left ${leftToRight ? "leftToRight" : ""}`}>
           <img src={pic} alt="" />
