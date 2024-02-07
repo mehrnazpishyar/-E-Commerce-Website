@@ -11,7 +11,8 @@ const Cart = () => {
   const totalPrice = cart.reduce(
     (price, item) => price + item.qty * item.price,
     0
-  );
+  ); 
+
 
   // Change button to p tag
   const handleButtonClick = () => {
@@ -39,17 +40,16 @@ const Cart = () => {
               </p>
               <p className="shipping">
                 Shipping
-                <span>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Facilis, fugit!
-                </span>
+                <span>$5</span>
               </p>
             </div>
             <p className="total-price">
-              Total <span>${totalPrice}</span>
+              Total <span>${totalPrice + 5}</span>
             </p>
             {isClick ? (
-              <p className="purchase">Congratulations! The purchase was successful.</p>
+              <p className="purchase">
+                Congratulations! The purchase was successful.
+              </p>
             ) : (
               <button onClick={handleButtonClick}>Checkout</button>
             )}

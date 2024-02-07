@@ -39,12 +39,11 @@
         display: flex;
         flex-direction: column;
         border-bottom: 1px solid $color-gray-medium;
-        padding-bottom: 1.5rem;
+        padding-bottom: 1rem;
+  
 
         h2 {
           font-size: 1.5rem;
-          line-height: 2rem;
-          font-weight: 500;
         }
 
         .shipping {
@@ -55,7 +54,7 @@
           line-height: 1.5rem;
 
           span {
-            font-size: 14px;
+            font-size: 1rem;
           }
         }
 
@@ -65,6 +64,7 @@
           gap: 1rem;
           font-size: 1rem;
           line-height: 1.5rem;
+          margin: 10px;
 
           span {
             font-weight: 500;
@@ -84,11 +84,10 @@
           line-height: 1.75rem;
           font-weight: 500;
         }
-
-       
       }
 
       button {
+        margin-top: 20px;
         font-size: 1.125rem;
         line-height: 1.75rem;
         background: $color-black;
@@ -103,7 +102,7 @@
           transition-duration: 300ms;
         }
       }
-      .purchase{
+      .purchase {
         text-align: center;
         margin-top: 40px;
         color: $color-purple;
@@ -157,6 +156,7 @@
         }
 
         h4 {
+          font-weight: 500;
           width: 13rem;
         }
 

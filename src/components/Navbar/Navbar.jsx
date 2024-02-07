@@ -11,7 +11,7 @@ import { AppContext } from "../context/AppProvider";
 const Navbar = () => {
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
   const { query, setQuery, favorite, cart } = useContext(AppContext);
-  console.log(isAuthenticated)
+  console.log(isAuthenticated);
 
   return (
     <header>
@@ -36,11 +36,10 @@ const Navbar = () => {
           <div className="tn-icons">
             <Link to="/favorite" className="fav-icon favorite">
               <RiHeartFill /> <span className="count">{favorite.length}</span>
-              <span className="tooltiptext">favorite</span>
             </Link>
             <Link to="/cart" className="fav-icon cart">
-              <RiShoppingCartFill /> <span className="count">{cart.length}</span>
-              <span className="tooltiptext">cart</span>
+              <RiShoppingCartFill />{" "}
+              <span className="count">{cart.length}</span>
             </Link>
 
             {isAuthenticated ? (
@@ -52,7 +51,6 @@ const Navbar = () => {
                 }
               >
                 <MdLogout />
-                <span className="tooltiptext">logout</span>
               </Link>
             ) : (
               <Link
@@ -61,7 +59,6 @@ const Navbar = () => {
                 onClick={() => loginWithRedirect()}
               >
                 <MdOutlineLogin />
-                <span className="tooltiptext">login</span>
               </Link>
             )}
             {isAuthenticated && (

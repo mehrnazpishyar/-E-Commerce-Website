@@ -14,8 +14,18 @@ export default function AppProvider({ children }) {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [detail, setDetail] = useState([]);
   const [closeModal, setCloseModal] = useState(false);
-  const [cart, setCart] = useState([]);
-  const [favorite, setFavorite] = useState([]);
+  const [cart, setCart] =  useState(()=> JSON.parse(localStorage.getItem("CARTS")) || [])
+  const [favorite, setFavorite] =  useState(()=> JSON.parse(localStorage.getItem("FAVOURITE")) || [])
+
+
+  useEffect(()=> {
+    localStorage.setItem("FAVOURITE" ,JSON.stringify(favorite))
+      },[favorite])
+
+  useEffect(()=> {
+    localStorage.setItem("CARTS" ,JSON.stringify(cart))
+      },[cart])
+
 
   // ------------ fetch Data -------------
   useEffect(() => {

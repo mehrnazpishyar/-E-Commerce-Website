@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { AppContext } from "../context/AppProvider";
 import { Link } from "react-router-dom";
-import { IoMdCloseCircleOutline } from "react-icons/io";
+import { HiArrowLeft } from "react-icons/hi";
+import { IoTrashOutline } from "react-icons/io5";
 
 const Favorite = () => {
   const { favorite, setFavorite, addToCartFromFavorite } =
@@ -14,42 +15,60 @@ const Favorite = () => {
     );
   };
 
+  //Reset Favorite
+  const ResetFavorite = () => {
+    setFavorite([]);
+  };
+
   return (
     <div className="shopping-favorite">
-      {favorite.length === 0 ? (
+      {!favorite.length ? (
         <div className="emptyfavorite">
           <h2 className="empty">Favorite is Empty</h2>
           <Link to="/all" className="empty-btn">
-            Go All Products
+            Go Products
           </Link>
         </div>
       ) : (
-        <div className="favorite-container">
-          <div className="content">
-            {favorite.map((item) => (
-              <div className="favorite-item" key={item.id}>
-                <div className="image-box">
-                  <img src={item.image} alt={item.title} />
-                </div>
-                <div className="detail">
-                  <div className="info">
-                    <h4>{item.category}</h4>
-                    <h3>{item.title}</h3>
-                    <p>Price : ${item.price}</p>
+        <div className="favorite-items">
+          <h2>Favorite Products :</h2>
+          <div>
+            {favorite.map((item) => {
+              return (
+                <div key={item.id} className="favorite-products">
+                  <div className="favorite-content">
+                    <div className="close-icon">
+                      <IoTrashOutline onClick={() => removeProduct(item)} />
+                    </div>
+                    <div>
+                      <img src={item.image} alt="image" />
+                    </div>
                   </div>
-                  <div className="addtocart">
-                    <button onClick={() => addToCartFromFavorite(item)}>
-                      Add to Cart
-                    </button>
-                  </div>
-                </div>
-                <div className="close">
-                  <button onClick={() => removeProduct(item)}>
-                    <IoMdCloseCircleOutline className="close-icon" />
+                  <h4>{item.title && item.title.slice(0, 40)}</h4>
+                  <p>${item.price}</p>
+                  <button onClick={()=>addToCartFromFavorite(item)} className="add-cart">
+                    Add To Cart
                   </button>
                 </div>
-              </div>
-            ))}
+              );
+            })}
+          </div>
+
+          <div className="buttons-footer">
+    
+              <Link to="/all" className="arrow-icon">
+                <HiArrowLeft />
+              </Link>
+
+              <Link to="/all" className="go-shop">
+                go shopping
+              </Link>
+        
+      
+              <button onClick={ResetFavorite} className="reset">
+                Reset Cart
+              </button>
+           
           </div>
         </div>
       )}

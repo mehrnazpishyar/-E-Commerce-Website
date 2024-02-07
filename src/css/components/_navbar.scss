@@ -128,31 +128,7 @@ header {
       display: none;
     }
 
-    .favorite,
-    .cart,
-    .login,
-    .logout {
-      .tooltiptext {
-        font-size: 14px;
-        visibility: hidden;
-        width: fit-content;
-        background-color: $color-blue;
-        color: #fff;
-        text-align: center;
-        border-radius: 6px;
-        padding: 5px;
-
-        /* tooltip */
-        position: absolute;
-        z-index: 1;
-        top: -100%;
-        left: 50%;
-        margin-left: -20px;
-      }
-      &:hover .tooltiptext {
-        visibility: visible;
-      }
-    }
+    
 
     @media (max-width: 768px) {
       .hamburger-menu {
