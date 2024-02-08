@@ -2,50 +2,18 @@ import { MdOutlineStar } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
 import { PiEye } from "react-icons/pi";
 import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { AppContext } from "../context/AppProvider";
 import { useAuth0 } from "@auth0/auth0-react";
-import { IoTrashOutline } from "react-icons/io5";
+import { LuHeartOff } from "react-icons/lu";
+
 
 const ProductsItems = ({ item }) => {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
 
-  const { viewDetail, addToCart, cart, addToFavorite, favorite, setCart } =
+  const { viewDetail, addToCart, cart, addToFavorite, favorite } =
     useContext(AppContext);
-  const [isClick, setIsClick] = useState(false);
 
-  console.log(item.qty);
-
-  // Change button to inc & dec buttons
-  const handleButtonClick = () => {
-    setIsClick(true);
-  };
-
-  const incQty = (product) => {
-    console.log("Incrementing qty:", product.qty);
-    setCart((prevCart) =>
-      prevCart.map((item) =>
-        item.id === product.id ? { ...item, qty: item.qty + 1 } : item
-      )
-    );
-  };
-  
-  const decQty = (product) => {
-    console.log("Decrementing qty:", product.qty);
-    setCart((prevCart) =>
-      prevCart.map((item) =>
-        item.id === product.id && item.qty > 1
-          ? { ...item, qty: item.qty - 1 }
-          : item
-      )
-    );
-  };
-  
-
-  // Remove product from cart
-  const removeProduct = (product) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== product.id));
-  };
 
   const isAddToCart = cart.some((cartItem) => cartItem.id === item.id);
   const isAddToFavorite = favorite.some((cartItem) => cartItem.id === item.id);
@@ -93,9 +61,9 @@ const ProductsItems = ({ item }) => {
         )} 
       </div>
       <div className="card-icons">
-        {isAuthenticated ? (
-          <Link to="" onClick={() => addToFavorite(item)}>
-            <FaRegHeart />
+        {isAddToFavorite ? (
+          <Link to="">
+            <LuHeartOff />
           </Link>
         ) : (
           <Link to="" onClick={() => handleAddToFavorite(item)}>

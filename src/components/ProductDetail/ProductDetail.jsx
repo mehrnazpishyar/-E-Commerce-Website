@@ -1,14 +1,32 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AppContext } from "../context/AppProvider";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 
 const ProductDetail = () => {
   const { detail, closeModal, setCloseModal,addToCart } = useContext(AppContext);
+ 
+  // Close modal when clicking outside
+ const handleOutsideClick = (e) => {
+  if (e.target.classList.contains("modal-overlay")) {
+    setCloseModal(false);
+  }
+};
+
+useEffect(() => {
+  if (closeModal) {
+    document.addEventListener("click", handleOutsideClick);
+  }
+
+  // Detach event listener when the modal is closed
+  return () => {
+    document.removeEventListener("click", handleOutsideClick);
+  };
+}, [closeModal]);
 
   return (
     <>
       {closeModal && (
-        <div className="product-detail">
+        <div className={`modal-overlay product-detail ${closeModal ? "open" : ""}`} >
           <div className="detail-container">
             <button className="btn-close">
               <IoMdCloseCircleOutline

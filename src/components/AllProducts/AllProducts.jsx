@@ -5,6 +5,8 @@ import ProductsItems from "../Products/ProductsItems";
 import ProductDetail from "../ProductDetail/ProductDetail";
 
 
+
+
 const AllProducts = () => {
 
   const {
@@ -22,11 +24,11 @@ const AllProducts = () => {
       <div className="all-container">
         <div className="filter">
           <div className="categories">
-            <h3>Categories</h3>
+            <h3>Filter by Categories :</h3>
             <ul>
               <li>
                 <button onClick={() => setFilteredProducts(allProducts)}>
-                  All
+                All
                 </button>
               </li>
               <li>
@@ -99,6 +101,7 @@ const AllProducts = () => {
           </div>
         </div>
       </div>
+
     </div>
   );
 };

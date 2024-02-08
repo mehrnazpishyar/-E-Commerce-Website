@@ -14,18 +14,20 @@ export default function AppProvider({ children }) {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [detail, setDetail] = useState([]);
   const [closeModal, setCloseModal] = useState(false);
-  const [cart, setCart] =  useState(()=> JSON.parse(localStorage.getItem("CARTS")) || [])
-  const [favorite, setFavorite] =  useState(()=> JSON.parse(localStorage.getItem("FAVOURITE")) || [])
+  const [cart, setCart] = useState(
+    () => JSON.parse(localStorage.getItem("CARTS")) || []
+  );
+  const [favorite, setFavorite] = useState(
+    () => JSON.parse(localStorage.getItem("FAVOURITE")) || []
+  );
 
+  useEffect(() => {
+    localStorage.setItem("FAVOURITE", JSON.stringify(favorite));
+  }, [favorite]);
 
-  useEffect(()=> {
-    localStorage.setItem("FAVOURITE" ,JSON.stringify(favorite))
-      },[favorite])
-
-  useEffect(()=> {
-    localStorage.setItem("CARTS" ,JSON.stringify(cart))
-      },[cart])
-
+  useEffect(() => {
+    localStorage.setItem("CARTS", JSON.stringify(cart));
+  }, [cart]);
 
   // ------------ fetch Data -------------
   useEffect(() => {
@@ -39,7 +41,16 @@ export default function AppProvider({ children }) {
       } catch (error) {
         setAllProducts([]);
         setFilteredProducts([]);
-        toast.error("Error fetching data");
+        toast.error("Error fetching data", {
+          style: {
+            background: "#fd2c2c",
+            color: "#ffffff",
+          },
+          iconTheme: {
+            primary: "#ffffff",
+            secondary: "#fd2c2c",
+          },
+        });
       } finally {
         setIsLoading(false);
       }
@@ -56,58 +67,63 @@ export default function AppProvider({ children }) {
   //------------ add to cart----------------
 
   const addToCart = (product) => {
-    const exsit = cart.find((x) => {
-      return x.id === product.id;
+    setCart([...cart, { ...product, qty: 1 }]);
+    setCloseModal(false);
+    toast.success("Product is added to cart", {
+      style: {
+        background: "#4CAF50",
+        color: "#ffffff",
+      },
+      iconTheme: {
+        primary: "#ffffff",
+        secondary: "#4CAF50",
+      },
     });
-
-    if (exsit) {
-      toast.success("This Product is already added to cart!");
-    } else {
-      setCart([...cart, { ...product, qty: 1 }]);
-      setCloseModal(false);
-      toast.success("Product is added to cart");
-    }
   };
 
   //------------ add to favorite-------------
 
   const addToFavorite = (product) => {
-    const exsit = favorite.find((x) => {
-      return x.id === product.id;
+    setFavorite([...favorite, { ...product, qty: 1 }]);
+    toast.success("Product is added to Favorite", {
+      style: {
+        background: "#4CAF50",
+        color: "#ffffff",
+      },
+      iconTheme: {
+        primary: "#ffffff",
+        secondary: "#4CAF50",
+      },
     });
-
-    if (exsit) {
-      toast.success("This Product is already added to Favorite!");
-    } else {
-      setFavorite([...favorite, { ...product, qty: 1 }]);
-      toast.success("Product is added to Favorite");
-    }
   };
 
   //------------ add to cart from favorite-------------
   const addToCartFromFavorite = (product) => {
-    const exsit = cart.find((x) => x.id === product.id);
-
-    if (exsit) {
-      toast.success("This Product is already added to cart!");
-    } else {
+   
+     
+   
       setCart([...cart, { ...product, qty: product.qty || 1 }]);
-      toast.success("Product is added to cart from Favorite");
-    }
-
-
+       toast.success("Product is added to cart", {
+      style: {
+        background: "#4CAF50",
+        color: "#ffffff",
+      },
+      iconTheme: {
+        primary: "#ffffff",
+        secondary: "#4CAF50",
+      },
+    });
+    
 
     //------------ Remove from favorites-------------
     const updatedFavorites = favorite.filter((x) => x.id !== product.id);
     setFavorite(updatedFavorites);
   };
 
-
-
   //------------ Sort Product by price-------------
   function sortProductsByPrice(e) {
     e.stopPropagation();
- 
+
     if (e.target.value === "LowToHigh") {
       setAllProducts([
         ...allProducts.sort((a, b) => {

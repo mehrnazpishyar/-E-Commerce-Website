@@ -3,12 +3,12 @@
 .allproducts {
   position: relative;
   h2 {
-    margin-top: 20px;
+    margin-top: 70px;
   }
 
   .all-container {
     display: flex;
-    padding: 30px 40px;
+    padding: 0 20px;
     width: 100%;
 
     h2 {
@@ -33,13 +33,13 @@
 
     .filter {
       padding: 20px 0;
-      margin-right: 50px;
 
       .categories {
+        width: 170px;
         h3 {
           margin-top: 10px;
-          color: $color-black-light;
-          font-size: 16px;
+          color: $color-purple;
+          font-size: 13px;
           text-transform: uppercase;
           font-weight: 700;
         }
@@ -52,8 +52,9 @@
             color: $color-black-light;
             cursor: pointer;
 
-            &:hover {
+            button:hover {
               color: $color-purple;
+              transform: scale(1.1);
             }
           }
         }
@@ -69,129 +70,6 @@
         flex-flow: wrap;
         justify-content: space-around;
         align-items: center;
-
-        .item-card {
-          width: 400px;
-          height: 500px;
-          text-align: center;
-          padding: 1rem;
-          margin: 0 10px 20px 0;
-          border: 2px solid $color-blue;
-          overflow: hidden;
-          position: relative;
-          transition: all 0.2s;
-          border-radius: 10px;
-
-          img {
-            width: 180px;
-            height: 230px;
-            max-width: 15rem;
-          }
-
-          h5 {
-            font-weight: 500;
-            margin: 1rem 0 0.5rem;
-            font-size: 14px;
-            text-transform: capitalize;
-            color: $color-black;
-          }
-
-          p {
-            color: $color-gray-dark;
-            text-transform: capitalize;
-            font-size: 14px;
-          }
-
-          .price {
-            text-align: center;
-            gap: 0.5rem;
-            margin: 0.5rem 0;
-            letter-spacing: 1px;
-            color: $color-purple;
-
-            span {
-              font-weight: 600;
-            }
-          }
-
-          .rating {
-            margin-top: 0.5rem;
-            font-size: 1rem;
-
-            a {
-              color: $color-yellow;
-            }
-          }
-
-          .card-buttons {
-            display: flex;
-            justify-content: space-around;
-            gap: 0.5rem;
-
-            .btn {
-              font-size: 0.7rem;
-              font-weight: 500;
-              text-transform: capitalize;
-              padding: 0.5rem;
-              letter-spacing: 0;
-              background-color: $color-blue;
-              color: $color-white;
-              border-radius: 10px;
-
-              &:hover {
-                background-color: $color-yellow;
-                color: $color-purple;
-              }
-            }
-
-            p{
-              color: $color-blue;
-            }
-          }
-
-          .card-icons {
-            width: 40px;
-            height: 60px;
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            display: flex;
-            gap: 0.5rem;
-            flex-direction: column;
-            transform: translateX(200%);
-            transition: all 0.2s;
-
-            a {
-              font-size: 1.1rem;
-              color: $color-white;
-              padding: 0.4rem;
-              line-height: 1;
-              border: 1px solid $color-yellow;
-              border-radius: 10px;
-              border-color: $color-blue;
-              background: $color-blue;
-
-              &:hover {
-                border-color: $color-yellow;
-                background: $color-yellow;
-              }
-            }
-
-            .eye-icon {
-              font-size: 1.3rem;
-            }
-          }
-
-          &:hover {
-            .card-icons {
-              transform: translateX(0);
-            }
-          }
-
-          &:hover {
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-          }
-        }
       }
     }
   }

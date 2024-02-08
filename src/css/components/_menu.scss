@@ -1,40 +1,59 @@
-@import '../abstracts/variables';
-.bn-container {
-    @extend %align-center;
-    flex: 1;
+@import "../abstracts/variables";
+@import "./media-queries";
 
-    .navlist {
-      display: flex;
-      gap: 2.5rem;
-      text-transform: capitalize;
-      z-index: 111;
-    
+.menu {
+  .nav-links {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+width: 300px;
 
-      a {
-        font-weight: 600;
-        color: $color-black;
-      }
 
-      a:hover {
-        color: $color-purple;
-        border-bottom: 3px solid $color-yellow;
-      }
-
-      a:hover::after {
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 768px) {
-      ul {
-        position: fixed;
-        top: 69px;
-        background-color: $color-yellow;
-        height: calc(100vh - 100px);
-        width: 50%;
-        flex-direction: column;
-        align-items: center;
-        transition: right 0.5s linear;
-      }
+    @include mobile {
+      display: none;
     }
   }
+
+  li {
+    font-weight: 500;
+
+    @include mobile {
+      color: white;
+      text-align: center;
+      padding: 22px;
+      width: 100%;
+      transition: all 0.5s ease;
+    }
+  }
+
+  .nav-links-mobile {
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+
+    @include mobile {
+      position: absolute;
+      display: block;
+      list-style: none;
+      background: $color-purple;
+      left: 0;
+      top: 47px;
+      transition: all 0.5s ease-out;
+      width: 100%;
+    }
+  }
+
+  .mobile-menu-icon {
+    display: none;
+
+    @include mobile {
+      display: block;
+      position: absolute;
+      font-size: 25px;
+      color: $color-purple;
+      border: none;
+      top: 15px;
+      right: 20px;
+    }
+  }
+}

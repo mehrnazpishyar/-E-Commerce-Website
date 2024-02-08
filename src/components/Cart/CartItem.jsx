@@ -53,7 +53,7 @@ const CartItem = () => {
                   <img src={item.image} alt="image" />
                 </div>
               </div>
-              <h4>{item.title && item.title.slice(0, 40)}</h4>
+              <h4>{item.title.slice(0, 40)}</h4>
               <p>${item.price}</p>
               <div>
                 <div className="buttons-box">

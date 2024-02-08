@@ -1,4 +1,3 @@
-import Navbar from "./components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
 import AllProducts from "./components/AllProducts/AllProducts";
 import DownloadApp from "./components/DownloadApp/DownloadApp";
@@ -7,6 +6,7 @@ import { Toaster } from "react-hot-toast";
 import AppProvider from "./components/context/AppProvider";
 import Favorite from "./components/Favorite/Favorite";
 import Cart from "./components/Cart/Cart";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
