@@ -61,7 +61,6 @@
   }
 
   .card-buttons {
-
     button {
       font-size: 15px;
       font-weight: 400;
@@ -81,9 +80,11 @@
       }
     }
 
-    p{
+    p {
       font-weight: 500;
       font-size: 17px;
+      color: #1adb21;
+      margin-top: 20px;
     }
   }
 
@@ -112,6 +113,7 @@
       &:hover {
         border-color: $color-yellow;
         background: $color-yellow;
+        color: $color-gray-dark;
       }
     }
 
@@ -119,7 +121,4 @@
       font-size: 1.3rem;
     }
   }
-
-  
-
 }

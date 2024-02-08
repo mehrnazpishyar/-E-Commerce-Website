@@ -1,6 +1,6 @@
-import { FaFacebookF } from "react-icons/fa";
+import { FaFacebookF,FaYoutube,FaTwitter } from "react-icons/fa";
 import { GrInstagram } from "react-icons/gr";
-import { FaTwitter } from "react-icons/fa";
+
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -13,16 +13,16 @@ const Footer = () => {
             <div>
             <ul>
               <li>
-                <Link href="#">about us</Link>
+                <Link to="#">about us</Link>
               </li>
               <li>
-                <Link href="#">our services</Link>
+                <Link to="#">our services</Link>
               </li>
               <li>
-                <Link href="#">privacy policy</Link>
+                <Link to="#">privacy policy</Link>
               </li>
               <li>
-                <Link href="#">affiliate program</Link>
+                <Link to="#">affiliate program</Link>
               </li>
             </ul>
             </div>
@@ -32,16 +32,16 @@ const Footer = () => {
             <h4>get help</h4>
             <ul>
               <li>
-                <Link href="#">FAQ</Link>
+                <Link to="#">FAQ</Link>
               </li>
               <li>
-                <Link href="#">shipping</Link>
+                <Link to="#">shipping</Link>
               </li>
               <li>
-                <Link href="#">returns</Link>
+                <Link to="#">returns</Link>
               </li>
               <li>
-                <Link href="#">order status</Link>
+                <Link to="#">order status</Link>
               </li>
             </ul>
           </div>
@@ -49,30 +49,33 @@ const Footer = () => {
             <h4>online shop</h4>
             <ul>
               <li>
-                <Link href="#">watch</Link>
+                <Link to="#">watch</Link>
               </li>
               <li>
-                <Link href="#">bag</Link>
+                <Link to="#">bag</Link>
               </li>
               <li>
-                <Link href="#">shoes</Link>
+                <Link to="#">shoes</Link>
               </li>
               <li>
-                <Link href="#">dress</Link>
+                <Link to="#">dress</Link>
               </li>
             </ul>
           </div>
           <div className="footer-col">
             <h4>follow us</h4>
             <div className="social-links">
-              <Link href="#">
+              <Link to="#">
                 <FaFacebookF />
               </Link>
-              <Link href="#">
+              <Link to="#">
                 <GrInstagram />
               </Link>
-              <Link href="#">
+              <Link to="#">
                 <FaTwitter />
+              </Link>
+              <Link to="#">
+                <FaYoutube />
               </Link>
             </div>
           </div>

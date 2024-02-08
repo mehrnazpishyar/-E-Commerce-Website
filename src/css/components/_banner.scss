@@ -1,4 +1,5 @@
 @import "../abstracts/variables";
+@import './media-queries';
 
 .banner-container {
   margin-top: 55px;
@@ -18,6 +19,10 @@
       transition-property: transform;
       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
       transition-duration: 1000ms;
+      @include mobile {
+        width: 100vw;
+      }
+ 
 
       img {
         width: 100%;

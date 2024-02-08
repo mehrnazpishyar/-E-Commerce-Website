@@ -1,4 +1,4 @@
-import pic from "../../../public/man.png";
+import pic from "../../../public/online.jpg";
 import { useEffect, useState } from "react";
 
 const Info = () => {

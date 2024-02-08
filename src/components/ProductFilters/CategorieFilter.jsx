@@ -22,12 +22,13 @@ const CategorieFilter = () => {
       width: "270px",
       border:"1px solid #ccc",
       borderRadius:"5px",
+
     }),
   };
 
   return (
     <div className="category-filter">
-      <h4 className="title-filter">Filter By Category :</h4>
+      <h4 className="filter-items">Filter By Category :</h4>
       <Select
         options={categoryOptions}
         styles={customStyles}

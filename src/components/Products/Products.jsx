@@ -23,7 +23,7 @@ const Products = () => {
       <ProductDetail />
       <ProductCategories />
       <hr />
-      <div className="title">
+      <div className="title-filter">
         <h1>Products Filter</h1>
       </div>
       <div className="products-filter">

@@ -67,16 +67,17 @@ export default function AppProvider({ children }) {
   //------------ add to cart----------------
 
   const addToCart = (product) => {
-    setCart([...cart, { ...product, qty: 1 }]);
+    setCart([...cart, { ...product, qty: product.qty || 1 }]);
+ 
     setCloseModal(false);
     toast.success("Product is added to cart", {
       style: {
-        background: "#4CAF50",
+        background: "#1adb21",
         color: "#ffffff",
       },
       iconTheme: {
         primary: "#ffffff",
-        secondary: "#4CAF50",
+        secondary: "#1adb21",
       },
     });
   };
@@ -85,41 +86,53 @@ export default function AppProvider({ children }) {
 
   const addToFavorite = (product) => {
     setFavorite([...favorite, { ...product, qty: 1 }]);
+
     toast.success("Product is added to Favorite", {
       style: {
-        background: "#4CAF50",
+        background: "#1adb21",
         color: "#ffffff",
       },
       iconTheme: {
         primary: "#ffffff",
-        secondary: "#4CAF50",
+        secondary: "#1adb21",
       },
     });
   };
 
   //------------ add to cart from favorite-------------
   const addToCartFromFavorite = (product) => {
-   
-     
-   
-      setCart([...cart, { ...product, qty: product.qty || 1 }]);
-       toast.success("Product is added to cart", {
-      style: {
-        background: "#4CAF50",
-        color: "#ffffff",
-      },
-      iconTheme: {
-        primary: "#ffffff",
-        secondary: "#4CAF50",
-      },
-    });
-    
-
-    //------------ Remove from favorites-------------
-    const updatedFavorites = favorite.filter((x) => x.id !== product.id);
-    setFavorite(updatedFavorites);
+    // Check if the product is not already in the cart
+    if (!cart.some((cartItem) => cartItem.id === product.id)) {
+      setCart((prevCart) => [...prevCart, { ...product, qty: product.qty || 1 }]);
+      toast.success("Product is added to cart", {
+        style: {
+          background: "#1adb21",
+          color: "#ffffff",
+        },
+        iconTheme: {
+          primary: "#ffffff",
+          secondary: "#1adb21",
+        },
+      });
+  
+      // Remove the product from favorites
+      const updatedFavorites = favorite.filter((x) => x.id !== product.id);
+      setFavorite(updatedFavorites);
+    } else {
+      // If the product is already in the cart, show a message or handle accordingly
+      toast.error("Product is already in the cart", {
+        style: {
+          background: "#fd2c2c",
+          color: "#ffffff",
+        },
+        iconTheme: {
+          primary: "#ffffff",
+          secondary: "#fd2c2c",
+        },
+      });
+    }
   };
-
+  
   //------------ Sort Product by price-------------
   function sortProductsByPrice(e) {
     e.stopPropagation();

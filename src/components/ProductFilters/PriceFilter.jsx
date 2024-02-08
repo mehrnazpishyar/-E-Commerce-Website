@@ -6,7 +6,7 @@ const PriceFilter = () => {
 
   return (
     <div className="price-filter">
-      <h4 className="title-filter">Filter By Price :</h4>
+      <h4>Filter By Price :</h4>
     
         <select
           data-bs-theme="light"

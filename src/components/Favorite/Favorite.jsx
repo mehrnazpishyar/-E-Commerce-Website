@@ -20,6 +20,7 @@ const Favorite = () => {
     setFavorite([]);
   };
 
+
   return (
     <div className="shopping-favorite">
       {!favorite.length ? (
@@ -32,7 +33,7 @@ const Favorite = () => {
       ) : (
         <div className="favorite-items">
           <h2>Favorite Products :</h2>
-          <div>
+          <div className="favorite-main">
             {favorite.map((item) => {
               return (
                 <div key={item.id} className="favorite-products">
@@ -44,11 +45,12 @@ const Favorite = () => {
                       <img src={item.image} alt="image" />
                     </div>
                   </div>
-                  <h4>{item.title && item.title.slice(0, 40)}</h4>
+                  <h4>{item.title.slice(0, 20)}</h4>
                   <p>${item.price}</p>
                   <button onClick={()=>addToCartFromFavorite(item)} className="add-cart">
                     Add To Cart
                   </button>
+              
                 </div>
               );
             })}

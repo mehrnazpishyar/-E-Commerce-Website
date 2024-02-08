@@ -1,4 +1,5 @@
 @import "../abstracts/variables";
+@import "./media-queries";
 
 .cart-container {
   .emptycart {
@@ -28,12 +29,19 @@
     margin: 0 auto;
     padding: 5rem 0;
     display: flex;
+    @include mobile {
+      flex-direction: column;
+    }
 
     .checkout {
       background-color: $color-gray-light;
       width: 33.333333%;
       height: 100vh;
       padding: 1.5rem;
+      @include mobile {
+      width: 100%;
+      }
+      
 
       .checkout-content {
         display: flex;
@@ -114,6 +122,9 @@
     .cart-items {
       width: 66.666667%;
       padding-right: 2.5rem;
+      @include mobile {
+        width: 100%;
+        }
 
       .cart-main {
         width: 100%;
@@ -148,6 +159,14 @@
         img {
           width: 8rem;
           height: 9.5rem;
+          @include mobile {
+            width: 5rem;
+            height: 6rem;
+            }
+          @include tablet {
+            width: 5rem;
+            height: 6rem;
+            }
         }
         .cartitem-content {
           display: flex;
@@ -158,6 +177,9 @@
         h4 {
           font-weight: 500;
           width: 13rem;
+          @include mobile {
+          font-size: 14px;
+            }
         }
 
         p {
@@ -243,6 +265,9 @@
         .arrow-icon {
           color: $color-gray-dark;
         }
+        @include mobile {
+        margin-bottom: 20px;
+            }
       }
     }
   }

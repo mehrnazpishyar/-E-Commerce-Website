@@ -1,19 +1,21 @@
 @import "../abstracts/variables";
+@import './media-queries';
 
 .price-filter {
   text-align: center;
 
-  .title-filter {
+
+  h4 {
+
     margin-bottom: 10px;
-    color: $color-purple;
+    color: $color-black;
   }
 
   select {
-   
     width: 230px;
- padding: 8px 0 8px 40px;
+    padding: 8px 0 8px 40px;
     font-size: 14px;
-    border: 2px solid $color-gray-light;
+    border: 2px solid $color-gray-medium;
     border-radius: 5px;
     cursor: pointer;
     outline: none;
@@ -21,13 +23,17 @@
     color: #808080;
     font-weight: 500;
 
+    @include mobile{
+      width: 200px;
+    }
+
     &:focus {
       border-color: #007bff;
     }
 
     .select-items {
       font-size: 14px;
-      border-radius: 2px !important;
+      border-radius: 2px;
       height: 50px;
 
       &:hover {
@@ -40,8 +46,14 @@
 .category-filter {
   text-align: center;
 
-  .title-filter {
+  h4{
     margin-bottom: 10px;
-    color: $color-purple;
+    color: $color-black;
+  }
+
+  .css-1s7safq-container{
+    @include mobile{
+      width: 230px;
+    }
   }
 }

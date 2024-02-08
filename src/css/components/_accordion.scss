@@ -1,14 +1,18 @@
-
-
 @import "../abstracts/variables";
+@import "./media-queries";
+
 
 .accordion {
   z-index: 1000;
   .title {
     color: $color-purple;
     font-weight: 700;
-    padding-top: 8rem;
+    margin-top: 8rem;
     text-align: center;
+
+    @include mobile {
+      margin-top: 3rem;
+    }
   }
 
   .flex {
