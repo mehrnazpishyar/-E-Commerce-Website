@@ -4,11 +4,7 @@ import Loader from "../Loader/Loader";
 import ProductsItems from "../Products/ProductsItems";
 import ProductDetail from "../ProductDetail/ProductDetail";
 
-
-
-
 const AllProducts = () => {
-
   const {
     isLoading,
     query,
@@ -28,7 +24,7 @@ const AllProducts = () => {
             <ul>
               <li>
                 <button onClick={() => setFilteredProducts(allProducts)}>
-                All
+                  All
                 </button>
               </li>
               <li>
@@ -101,7 +97,6 @@ const AllProducts = () => {
           </div>
         </div>
       </div>
-
     </div>
   );
 };

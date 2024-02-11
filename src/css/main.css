@@ -540,6 +540,19 @@ footer .footer-col .social-links a:hover {
   }
 }
 
+.product-category-container {
+  margin-top: 90px;
+}
+.product-category-container h2 {
+  margin-bottom: 50px;
+  text-align: center;
+}
+.product-category-container .product-cart-category {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .price-filter {
   text-align: center;
 }

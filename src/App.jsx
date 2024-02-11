@@ -7,6 +7,10 @@ import AppProvider from "./components/context/AppProvider";
 import Favorite from "./components/Favorite/Favorite";
 import Cart from "./components/Cart/Cart";
 import Navbar from "./components/Navbar/Navbar";
+import Man from "./components/Man/Man";
+import Woman from "./components/Woman/Woman";
+import Jewellery from "./components/Jewellery/Jewellery";
+import Electronics from "./components/Electronics/Electronics";
 
 function App() {
   return (
@@ -19,6 +23,10 @@ function App() {
         <Route path="/download" element={<DownloadApp />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/favorite" element={<Favorite />} />
+        <Route path="/categories/woman" element={<Woman />} />
+        <Route path="/categories/man" element={<Man />} />
+        <Route path="/categories/jewellery" element={<Jewellery />} />
+        <Route path="/categories/electronics" element={<Electronics />} />
       </Routes>
     </AppProvider>
   );

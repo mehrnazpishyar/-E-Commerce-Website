@@ -1,12 +1,15 @@
 import { createContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import axios from "axios";
+import { useParams } from "react-router-dom";
+
 
 export const AppContext = createContext();
 
 const apiUrl = "https://fakestoreapi.com/products";
 
 export default function AppProvider({ children }) {
+  const { category } = useParams();
   const [query, setQuery] = useState("");
   const [allProducts, setAllProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -56,7 +59,7 @@ export default function AppProvider({ children }) {
       }
     }
     fetchData();
-  }, [query]);
+  }, [query,category]);
 
   //------------ product detail-------------
   const viewDetail = (product) => {

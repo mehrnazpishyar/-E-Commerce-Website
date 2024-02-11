@@ -23,7 +23,6 @@
         @include mobile {
           font-size: 15px;
         }
-      
       }
 
       .img-box {
@@ -66,5 +65,19 @@
         }
       }
     }
+  }
+}
+
+.product-category-container {
+  margin-top: 90px;
+
+  h2 {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  .product-cart-category {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 }

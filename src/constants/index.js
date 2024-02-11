@@ -4,25 +4,32 @@ import { FaPercent } from "react-icons/fa6";
 import { LuTruck } from "react-icons/lu";
 import { CgDollar } from "react-icons/cg";
 
-export const categoryData=[
+export const categoryData = [
     {
-        imgURL: "../../public/man.png",
-        title:"Man",
+      id: 1,
+      imgURL: "../../public/man.png",
+      title: "Man",
+      url: "man",
     },
     {
-        imgURL: "../../public/jeweee.png",
-        title:"Jewellery",
+      id: 2,
+      imgURL: "../../public/jeweee.png",
+      title: "Jewellery",
+      url: "jewellery",
     },
     {
-        imgURL: '../../public/woman.png',
-        title:"Woman",
+      id: 3,
+      imgURL: "../../public/woman.png",
+      title: "Woman",
+      url: "woman",
     },
     {
-        imgURL: '../../public/electro.png',
-        title:"Electronics",
+      id: 4,
+      imgURL: "../../public/electro.png",
+      title: "Electronics",
+      url: "electronics",
     },
-
-]
+  ];
 
 export const FAQ =[
     {
