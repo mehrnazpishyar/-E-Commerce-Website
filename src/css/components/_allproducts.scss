@@ -56,6 +56,7 @@
 
           li {
             margin-top: 20px;
+            font-weight: 500;
             color: $color-black-light;
             cursor: pointer;
             @include mobile {
@@ -63,7 +64,7 @@
             }
 
             button:hover {
-              color: $color-purple;
+              color: $color-yellow;
               transform: scale(1.1);
             }
           }

@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { AppContext } from "../context/AppProvider";
 import Loader from "../Loader/Loader";
 import ProductsItems from "../Products/ProductsItems";
+import { Link } from "react-router-dom";
 
 const Electronics = () => {
     
@@ -30,6 +31,9 @@ const Electronics = () => {
 
   return (
     <div className="product-category-container">
+        <Link className="arrow-shop" to="/">
+        <span className="go-shop">Go Home</span>
+      </Link>
       <h2>Electronic's Category</h2>
 
       <div className="product-cart-category">

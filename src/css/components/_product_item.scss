@@ -2,7 +2,7 @@
 
 .item-card {
   width: 400px;
-  height: 500px;
+  height: 510px;
   text-align: center;
   padding: 1rem;
   margin-bottom: 20px;
@@ -61,7 +61,8 @@
   }
 
   .card-buttons {
-    button {
+    margin-top: 20px;
+    .btn {
       font-size: 15px;
       font-weight: 400;
       text-transform: capitalize;
@@ -80,11 +81,45 @@
       }
     }
 
-    p {
-      font-weight: 500;
-      font-size: 17px;
-      color: #1adb21;
-      margin-top: 20px;
+    .buttons-box {
+      margin-left: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-items: center;
+
+      span {
+        font-size: 20px;
+      }
+      .inc-dec {
+        font-size: 15px;
+        font-weight: 400;
+        text-transform: capitalize;
+        padding: 4px 12px;
+        letter-spacing: 0;
+        background-color: $color-blue;
+        color: $color-white;
+        border-radius: 10px;
+        margin: 0 15px;
+        &:hover {
+          background-color: $color-yellow;
+          color: $color-purple;
+          border: 1px solid $color-gray-medium;
+          transition: 0.2s;
+        }
+      }
+      .trash {
+        font-size: 26px;
+        margin-right: 8px;
+        margin-top: -2px;
+        color: $color-blue;
+        cursor: pointer;
+        &:hover {
+          color: $color-yellow;
+
+          transition: 0.2s;
+        }
+      }
     }
   }
 

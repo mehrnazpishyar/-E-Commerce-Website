@@ -18,6 +18,11 @@
     .categories-card {
       h2 {
         color: $color-black-light;
+        &:hover {
+          color: $color-yellow;
+          transform: scale(1.1);
+          transition: 0.2s;
+        }
 
         padding-top: 10px;
         @include mobile {
@@ -32,6 +37,10 @@
         overflow: hidden;
         border-radius: 50%;
         margin: 5px;
+
+        &:hover {
+          border: 1px solid $color-yellow;
+        }
         @include mobile {
           width: 100px;
           height: 110px;
@@ -74,6 +83,18 @@
   h2 {
     margin-bottom: 50px;
     text-align: center;
+  }
+
+  .arrow-shop {
+ 
+    .go-shop{
+      color: $color-gray-medium;
+      text-decoration: underline;
+
+      &:hover{
+        color: $color-black-light;
+      }
+    }
   }
   .product-cart-category {
     display: flex;

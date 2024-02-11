@@ -3,7 +3,6 @@ import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-
 export const AppContext = createContext();
 
 const apiUrl = "https://fakestoreapi.com/products";
@@ -59,7 +58,7 @@ export default function AppProvider({ children }) {
       }
     }
     fetchData();
-  }, [query,category]);
+  }, [query, category]);
 
   //------------ product detail-------------
   const viewDetail = (product) => {
@@ -71,7 +70,7 @@ export default function AppProvider({ children }) {
 
   const addToCart = (product) => {
     setCart([...cart, { ...product, qty: product.qty || 1 }]);
- 
+
     setCloseModal(false);
     toast.success("Product is added to cart", {
       style: {
@@ -106,7 +105,10 @@ export default function AppProvider({ children }) {
   const addToCartFromFavorite = (product) => {
     // Check if the product is not already in the cart
     if (!cart.some((cartItem) => cartItem.id === product.id)) {
-      setCart((prevCart) => [...prevCart, { ...product, qty: product.qty || 1 }]);
+      setCart((prevCart) => [
+        ...prevCart,
+        { ...product, qty: product.qty || 1 },
+      ]);
       toast.success("Product is added to cart", {
         style: {
           background: "#1adb21",
@@ -117,7 +119,7 @@ export default function AppProvider({ children }) {
           secondary: "#1adb21",
         },
       });
-  
+
       // Remove the product from favorites
       const updatedFavorites = favorite.filter((x) => x.id !== product.id);
       setFavorite(updatedFavorites);
@@ -135,7 +137,7 @@ export default function AppProvider({ children }) {
       });
     }
   };
-  
+
   //------------ Sort Product by price-------------
   function sortProductsByPrice(e) {
     e.stopPropagation();
