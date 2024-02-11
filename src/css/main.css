@@ -487,7 +487,6 @@ footer .footer-col .social-links a:hover {
 }
 .categories .categories-container .categories-card h2 {
   color: #2d2c2c;
-  padding-top: 10px;
 }
 .categories .categories-container .categories-card h2:hover {
   color: #ffcc00;
@@ -500,6 +499,9 @@ footer .footer-col .social-links a:hover {
   }
 }
 .categories .categories-container .categories-card .img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 210px;
   width: 210px;
   background-color: #efefef;
@@ -522,38 +524,9 @@ footer .footer-col .social-links a:hover {
     height: 140px;
   }
 }
-.categories .categories-container .categories-card .img-box img {
-  height: 150px;
-  width: 140px;
-  align-items: center;
-  max-width: 100%;
-  justify-content: center;
-  margin-top: 25px;
-}
-.categories .categories-container .categories-card .img-box img:hover {
-  transform: scale(1.1);
-  transition: 0.2s;
-}
-@media screen and (max-width: 768px) {
-  .categories .categories-container .categories-card .img-box img {
-    width: 60px;
-    height: 70px;
-    margin-top: 20px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .categories .categories-container .categories-card .img-box img {
-    width: 80px;
-    height: 90px;
-  }
-}
 
 .product-category-container {
   margin-top: 90px;
-}
-.product-category-container h2 {
-  margin-bottom: 50px;
-  text-align: center;
 }
 .product-category-container .arrow-shop .go-shop {
   color: #ccc;

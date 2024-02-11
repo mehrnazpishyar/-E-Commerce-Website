@@ -3,28 +3,26 @@ import { FaPercent } from "react-icons/fa6";
 import { LuTruck } from "react-icons/lu";
 import { CgDollar } from "react-icons/cg";
 
+
+
 export const categoryData = [
   {
     id: 1,
-    imgURL: "../../public/man.png",
     title: "Man",
     url: "man",
   },
   {
     id: 2,
-    imgURL: "../../public/jeweee.png",
     title: "Jewellery",
     url: "jewellery",
   },
   {
     id: 3,
-    imgURL: "../../public/woman.png",
     title: "Woman",
     url: "woman",
   },
   {
     id: 4,
-    imgURL: "../../public/electro.png",
     title: "Electronics",
     url: "electronics",
   },

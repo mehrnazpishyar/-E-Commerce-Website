@@ -23,14 +23,15 @@
           transform: scale(1.1);
           transition: 0.2s;
         }
-
-        padding-top: 10px;
         @include mobile {
           font-size: 15px;
         }
       }
 
       .img-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 210px;
         width: 210px;
         background-color: $color-gray-light;
@@ -49,29 +50,6 @@
           width: 140px;
           height: 140px;
         }
-
-        img {
-          height: 150px;
-          width: 140px;
-          align-items: center;
-          max-width: 100%;
-          justify-content: center;
-          margin-top: 25px;
-          &:hover {
-            transform: scale(1.1);
-            transition: 0.2s;
-          }
-
-          @include mobile {
-            width: 60px;
-            height: 70px;
-            margin-top: 20px;
-          }
-          @include tablet {
-            width: 80px;
-            height: 90px;
-          }
-        }
       }
     }
   }
@@ -80,18 +58,12 @@
 .product-category-container {
   margin-top: 90px;
 
-  h2 {
-    margin-bottom: 50px;
-    text-align: center;
-  }
-
   .arrow-shop {
- 
-    .go-shop{
+    .go-shop {
       color: $color-gray-medium;
       text-decoration: underline;
 
-      &:hover{
+      &:hover {
         color: $color-black-light;
       }
     }

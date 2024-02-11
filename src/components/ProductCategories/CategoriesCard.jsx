@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 
-const CategoriesCard = ({ imgURL, title, url }) => {
+const CategoriesCard = ({ title, url }) => {
   return (
     <div className="categories-card">
       <Link to={`/categories/${url}`}>
         <div className="img-box">
-          <img src={imgURL} alt="product" />
+          <h2>{title}</h2>
         </div>
-        <h2>{title}</h2>
       </Link>
     </div>
   );
