@@ -85,7 +85,7 @@ const CartItem = () => {
             <Link to="/all" className="arrow-icon">
               <HiArrowLeft />
             </Link>
-            <Link to="/all" className="go-shop">go shopping</Link>
+            <Link to="/all" className="go-shop">Go Shopping</Link>
          </div>
        
         </div>

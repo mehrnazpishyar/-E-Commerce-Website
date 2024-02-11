@@ -63,7 +63,7 @@ const Favorite = () => {
               </Link>
 
               <Link to="/all" className="go-shop">
-                go shopping
+                Go Shopping
               </Link>
         
       

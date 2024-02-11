@@ -1,8 +1,10 @@
 import { useContext, useEffect } from "react";
 import { AppContext } from "../context/AppProvider";
 import { IoMdCloseCircleOutline } from "react-icons/io";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const ProductDetail = () => {
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
   const { detail, closeModal, setCloseModal, addToCart, cart } =
     useContext(AppContext);
 
@@ -24,7 +26,18 @@ const ProductDetail = () => {
     };
   }, [closeModal]);
 
-  const isAddToCart = cart.some((cartItem) => cartItem.id === detail[0]?.id);
+  const isAddToCart = detail && cart.some((cartItem) => cartItem.id === detail[0]?.id);
+
+  const handleAddToCart = () => {
+    if (isAuthenticated) {
+      if (!isAddToCart) {
+        addToCart(detail[0]);
+      }
+    } else {
+      loginWithRedirect();
+    }
+  };
+
 
   return (
     <>
@@ -57,7 +70,7 @@ const ProductDetail = () => {
                       {isAddToCart ? (
                         <p>Already Added to 🛒</p>
                       ) : (
-                        <button onClick={() => addToCart(item)}>
+                        <button onClick={() => handleAddToCart(item)}>
                           Add To Cart
                         </button>
                       )}

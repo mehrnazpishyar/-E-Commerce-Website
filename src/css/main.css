@@ -715,7 +715,7 @@ footer .footer-col .social-links a:hover {
   color: #ffcc00;
 }
 .item-card .card-buttons {
-  margin-top: 20px;
+  margin-top: 15px;
 }
 .item-card .card-buttons .btn {
   font-size: 15px;
@@ -735,6 +735,7 @@ footer .footer-col .social-links a:hover {
   transition: 0.2s;
 }
 .item-card .card-buttons .buttons-box {
+  margin-top: 20px;
   margin-left: 20px;
   display: flex;
   justify-content: center;
