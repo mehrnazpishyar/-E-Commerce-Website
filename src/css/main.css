@@ -607,36 +607,39 @@ footer .footer-col .social-links a:hover {
 @media screen and (max-width: 768px) {
   .products .title-filter h1 {
     font-size: 18px;
-    margin-top: 60px;
+    margin-top: 0px;
   }
 }
-.products hr {
+
+hr {
   width: 60%;
   background-color: #ccc;
   height: 1px;
   margin-top: 60px;
 }
 @media screen and (max-width: 768px) {
-  .products hr {
+  hr {
     margin-top: 40px;
   }
 }
-.products .shop-container {
+
+.shop-container {
   margin-top: 30px;
 }
-.products .shop-container .product-cart {
+.shop-container .product-cart {
   display: flex;
   flex-flow: wrap;
   justify-content: space-around;
   align-items: center;
 }
-.products .products-filter {
+
+.products-filter {
   display: flex;
   justify-content: space-around;
   margin-top: 40px;
 }
 @media screen and (max-width: 768px) {
-  .products .products-filter {
+  .products-filter {
     margin-top: 30px;
   }
 }
