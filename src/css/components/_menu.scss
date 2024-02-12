@@ -2,11 +2,12 @@
 @import "./media-queries";
 
 .menu {
+  position: relative;
+
   .nav-links {
-    display: flex;
-    justify-content: space-around;
     list-style: none;
     width: 300px;
+    @include flexAlign(space-around);
 
     @include mobile {
       display: none;
@@ -18,8 +19,6 @@
     }
   }
 
-  li {
-    font-weight: 500;
 
     @include mobile {
       color: white;
@@ -31,9 +30,8 @@
   }
 
   .nav-links-mobile {
-    display: flex;
-    justify-content: space-around;
     width: 300px;
+    @include flexAlign(space-around);
 
     @include mobile {
       position: absolute;
@@ -44,6 +42,23 @@
       top: 47px;
       transition: all 0.5s ease-out;
       width: 100%;
+
+      a {
+        color: white;
+        text-align: center;
+        padding: 22px;
+        width: 100%;
+        transition: all 0.5s ease;
+
+        &:hover {
+          color: $color-purple;
+          border-bottom: 3px solid $color-yellow;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+      }
     }
   }
 

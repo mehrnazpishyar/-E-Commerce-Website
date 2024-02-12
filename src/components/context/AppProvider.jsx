@@ -1,14 +1,11 @@
 import { createContext, useEffect, useState } from "react";
-import { toast } from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 
 export const AppContext = createContext();
-
 const apiUrl = "https://fakestoreapi.com/products";
 
 export default function AppProvider({ children }) {
-  const { category } = useParams();
   const [query, setQuery] = useState("");
   const [allProducts, setAllProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -17,19 +14,37 @@ export default function AppProvider({ children }) {
   const [detail, setDetail] = useState([]);
   const [closeModal, setCloseModal] = useState(false);
   const [cart, setCart] = useState(
-    () => JSON.parse(localStorage.getItem("CARTS")) || []
+    JSON.parse(localStorage.getItem("CARTS")) || []
   );
   const [favorite, setFavorite] = useState(
-    () => JSON.parse(localStorage.getItem("FAVOURITE")) || []
+    JSON.parse(localStorage.getItem("FAVOURITE")) || []
   );
 
+  // ------------ LocalStorage -------------
+  const updateLocalStorage = (key, data) => {
+    localStorage.setItem(key, JSON.stringify(data));
+  };
+
   useEffect(() => {
-    localStorage.setItem("FAVOURITE", JSON.stringify(favorite));
+    updateLocalStorage("FAVOURITE", favorite);
   }, [favorite]);
 
   useEffect(() => {
-    localStorage.setItem("CARTS", JSON.stringify(cart));
+    updateLocalStorage("CARTS", cart);
   }, [cart]);
+
+  // ------------ toast style -------------
+
+  const toastStyle = {
+    success: {
+      background: "#1adb21",
+      color: "#ffffff",
+    },
+    error: {
+      background: "#fd2c2c",
+      color: "#ffffff",
+    },
+  };
 
   // ------------ fetch Data -------------
   useEffect(() => {
@@ -43,22 +58,13 @@ export default function AppProvider({ children }) {
       } catch (error) {
         setAllProducts([]);
         setFilteredProducts([]);
-        toast.error("Error fetching data", {
-          style: {
-            background: "#fd2c2c",
-            color: "#ffffff",
-          },
-          iconTheme: {
-            primary: "#ffffff",
-            secondary: "#fd2c2c",
-          },
-        });
+        toast.error("Error fetching data", { style: toastStyle.error });
       } finally {
         setIsLoading(false);
       }
     }
     fetchData();
-  }, [query, category]);
+  }, [query]);
 
   //------------ product detail-------------
   const viewDetail = (product) => {
@@ -67,37 +73,17 @@ export default function AppProvider({ children }) {
   };
 
   //------------ add to cart----------------
-
   const addToCart = (product) => {
     setCart([...cart, { ...product, qty: product.qty || 1 }]);
-
     setCloseModal(false);
-    toast.success("Product is added to cart", {
-      style: {
-        background: "#1adb21",
-        color: "#ffffff",
-      },
-      iconTheme: {
-        primary: "#ffffff",
-        secondary: "#1adb21",
-      },
-    });
+    toast.success("Product is added to cart", { style: toastStyle.success });
   };
 
   //------------ add to favorite-------------
-
   const addToFavorite = (product) => {
     setFavorite([...favorite, { ...product, qty: 1 }]);
-
     toast.success("Product is added to Favorite", {
-      style: {
-        background: "#1adb21",
-        color: "#ffffff",
-      },
-      iconTheme: {
-        primary: "#ffffff",
-        secondary: "#1adb21",
-      },
+      style: toastStyle.success,
     });
   };
 
@@ -109,53 +95,29 @@ export default function AppProvider({ children }) {
         ...prevCart,
         { ...product, qty: product.qty || 1 },
       ]);
-      toast.success("Product is added to cart", {
-        style: {
-          background: "#1adb21",
-          color: "#ffffff",
-        },
-        iconTheme: {
-          primary: "#ffffff",
-          secondary: "#1adb21",
-        },
-      });
+      toast.success("Product is added to cart", { style: toastStyle.success });
 
-      // Remove the product from favorites
+      //------------ Remove the product from favorites----------------
       const updatedFavorites = favorite.filter((x) => x.id !== product.id);
       setFavorite(updatedFavorites);
     } else {
       // If the product is already in the cart, show a message or handle accordingly
       toast.error("Product is already in the cart", {
-        style: {
-          background: "#fd2c2c",
-          color: "#ffffff",
-        },
-        iconTheme: {
-          primary: "#ffffff",
-          secondary: "#fd2c2c",
-        },
+        style: toastStyle.error,
       });
     }
   };
 
-  //------------ Sort Product by price-------------
+  //----------------- Sort Product by price------------------
   function sortProductsByPrice(e) {
     e.stopPropagation();
 
     if (e.target.value === "LowToHigh") {
-      setAllProducts([
-        ...allProducts.sort((a, b) => {
-          return a.price - b.price;
-        }),
-      ]);
+      setAllProducts([...allProducts].sort((a, b) => a.price - b.price));
     }
 
     if (e.target.value === "HighToLow") {
-      setAllProducts([
-        ...allProducts.sort((a, b) => {
-          return b.price - a.price;
-        }),
-      ]);
+      setAllProducts([...allProducts].sort((a, b) => b.price - a.price));
     }
   }
 
@@ -187,6 +149,7 @@ export default function AppProvider({ children }) {
       }}
     >
       {children}
+      <Toaster reverseOrder={false} />
     </AppContext.Provider>
   );
 }

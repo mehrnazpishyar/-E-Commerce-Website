@@ -23,10 +23,30 @@
     $border-radius-50:50px;
 
   
-// SIMILAR CODES
+// MIXIN FUNCTIONS
 
-   %align-center{
+   @mixin flexAlign{
     display: flex;
     align-items: center;
-    justify-content: center;
-   } 
+    justify-content: $justify-content;
+   }
+
+   @mixin buttonStyle {
+    cursor: pointer;
+    font-size: $font-size;
+    color: $color;
+    background-color:$background-color;
+    border-radius:$border-radius;
+    transition: all 0.5s ease;
+  }
+
+  @mixin headingStyle{
+    font-size: $font-size;
+    font-weight: $font-weight;
+    color: $color;
+  }
+
+  @mixin widthHeight{
+    width: $width;
+    height: $height;
+  }

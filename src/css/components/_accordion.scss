@@ -1,7 +1,6 @@
 @import "../abstracts/variables";
 @import "./media-queries";
 
-
 .accordion {
   z-index: 1000;
   .title {
@@ -16,8 +15,7 @@
   }
 
   .flex {
-    display: flex;
-    justify-content: center;
+    @include flexAlign(center);
   }
 
   .secContainer {
@@ -28,13 +26,12 @@
       cursor: pointer;
 
       .heading {
-        display: flex;
         font-size: 0.95rem;
         align-items: center;
         padding: 1rem;
         border-radius: 10px;
-        justify-content: space-between;
         background-color: $color-yellow;
+        @include flexAlign(space-between);
 
         .headingIcon {
           cursor: pointer;

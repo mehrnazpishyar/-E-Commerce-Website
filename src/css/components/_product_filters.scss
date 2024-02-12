@@ -1,12 +1,10 @@
 @import "../abstracts/variables";
-@import './media-queries';
+@import "./media-queries";
 
 .price-filter {
   text-align: center;
 
-
   h4 {
-
     margin-bottom: 10px;
     color: $color-black;
   }
@@ -23,7 +21,7 @@
     color: #808080;
     font-weight: 500;
 
-    @include mobile{
+    @include mobile {
       width: 200px;
     }
 
@@ -46,13 +44,13 @@
 .category-filter {
   text-align: center;
 
-  h4{
+  h4 {
     margin-bottom: 10px;
     color: $color-black;
   }
 
-  .css-1s7safq-container{
-    @include mobile{
+  .css-1s7safq-container {
+    @include mobile {
       width: 230px;
     }
   }

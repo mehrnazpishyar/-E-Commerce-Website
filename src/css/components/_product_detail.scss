@@ -7,20 +7,16 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 1000;
+  @include flexAlign(center);
 
   .detail-container {
     background: #fff;
     border-radius: 8px;
     padding: 30px;
     position: relative;
-    width: 90%;
-    height: 380px;
     max-width: 600px;
-
+    @include widthHeight(90%, 380px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
 
@@ -38,16 +34,13 @@
     }
 
     .productbox {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
       margin-top: 30px;
+      @include flexAlign(space-around);
 
       .img-box {
         img {
-          width: 200px;
-          height: 250px;
           border-radius: 4px;
+          @include widthHeight(200px, 250px);
         }
       }
 
@@ -73,13 +66,9 @@
         }
 
         button {
-          background: $color-blue;
-          color: #fff;
           border: none;
-          padding:8px 10px;
-          cursor: pointer;
-          border-radius: 4px;
-          font-size: 16px;
+          padding: 8px 10px;
+          @include buttonStyle(16px, $color-white, $color-blue, 4px);
 
           &:hover {
             background-color: $color-blue-light;
@@ -87,7 +76,7 @@
             transform: scale(1.1);
           }
         }
-        p{
+        p {
           color: #1adb21;
         }
       }

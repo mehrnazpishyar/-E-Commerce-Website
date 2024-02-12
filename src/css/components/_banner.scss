@@ -3,31 +3,26 @@
 
 .banner-container {
   margin-top: 55px;
-  width: 100%;
-  height: auto;
   overflow: hidden;
+  @include widthHeight(100%,auto);
 
   .banner {
-    width: 100vw;
-    height: 650px;
     position: relative;
+    @include widthHeight(100vw,650px);
 
     .banner-main {
       display: flex;
-      width: 400vw;
-      height: 100%;
       transition-property: transform;
       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
       transition-duration: 1000ms;
+      @include widthHeight(400vw,100%);
       @include mobile {
         width: 100vw;
       }
- 
 
       img {
-        width: 100%;
-        height: 100%;
         object-fit: cover;
+        @include widthHeight(100%,100%);
       }
     }
 
@@ -37,21 +32,19 @@
       width: fit-content;
       left: 0;
       right: 0;
-      margin-left: auto;
-      margin-right: auto;
-      gap: 2rem;
       bottom: 5rem;
+      margin: 0 auto;
+      gap: 2rem;
 
       .arrow-left,
       .arrow-right {
-        width: 3.5rem;
-        height: 3rem;
         border: 2px solid $color-gray-light;
         display: flex;
         align-items: center;
         justify-content: center;
         transition-duration: 300ms;
         color:$color-white;
+        @include widthHeight(3.5rem,3rem);
 
         &:hover {
           cursor: pointer;

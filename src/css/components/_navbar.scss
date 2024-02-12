@@ -12,9 +12,7 @@ header {
   left: 0;
 
   .tn-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flexAlign(space-between);
     padding: 0.5rem 0 0.5rem 0;
     width: 90%;
     margin-inline: auto;
@@ -26,13 +24,11 @@ header {
     }
 
     .logo {
-      font-size: 1.5rem;
-      font-weight: 600;
       text-decoration: uppercase;
       padding: 0 0.4rem;
       letter-spacing: 0.1rem;
-      color: $color-purple;
       border-radius: 10px;
+      @include headingStyle(1.5rem, 600, $color-purple);
       @include mobile {
         display: none;
       }
@@ -78,8 +74,6 @@ header {
       .search-icon {
         cursor: pointer;
         font-size: 1.2rem;
-        width: 43px;
-        height: 41px;
         position: absolute;
         border: none;
         top: 0px;
@@ -87,6 +81,7 @@ header {
         transform: scale(0.9);
         border-radius: 50px;
         background-color: $color-yellow;
+        @include widthHeight(43px,41px);
 
         .srch {
           position: absolute;
@@ -129,13 +124,11 @@ header {
         position: absolute;
         top: -0.8rem;
         right: -0.6rem;
-        font-size: 0.8rem;
-        font-weight: 500;
         border-radius: 3px;
-        color: $color-white;
         background-color: $color-red;
         border-radius: 50px;
         padding: 0px 5px;
+        @include headingStyle(0.8rem,500,$color-white);
       }
 
       .cart-user {
@@ -159,13 +152,11 @@ header {
     }
 
     .menu-section {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       height: 80px;
       padding: 0 2rem;
       background-color: #29335c;
       color: #eee;
+      @include flexAlign(space-between);
 
       nav {
         display: flex;

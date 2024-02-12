@@ -19,12 +19,10 @@ footer {
     padding: 0 15px;
 
     h4 {
-      font-size: 18px;
-      color: #ffffff;
       text-transform: capitalize;
       margin-bottom: 35px;
-      font-weight: 500;
       position: relative;
+      @include headingStyle(18px,500,$color-white);
 
       &::before {
         content: "";
@@ -43,14 +41,11 @@ footer {
     }
 
     ul li a {
-      font-size: 16px;
       text-transform: capitalize;
-      color: #ffffff;
       text-decoration: none;
-      font-weight: 500;
-      color: #bbbbbb;
       display: block;
       transition: all 0.3s ease;
+      @include headingStyle(16px,500,$color-white);
 
       &:hover {
         color: #ffffff;
@@ -61,8 +56,6 @@ footer {
     .social-links {
       a {
         display: inline-block;
-        height: 40px;
-        width: 40px;
         background-color: rgba(255, 255, 255, 0.2);
         margin: 0 10px 10px 0;
         text-align: center;
@@ -70,6 +63,7 @@ footer {
         border-radius: 50%;
         color: #ffffff;
         transition: all 0.5s ease;
+        @include widthHeight(40px,40px);
 
         &:hover {
           color: #24262b;

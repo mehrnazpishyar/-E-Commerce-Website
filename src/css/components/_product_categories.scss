@@ -13,10 +13,8 @@
   }
 
   .categories-container {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
     max-width: 100%;
+    @include flexAlign(space-around);
 
     .categories-card {
       h2 {
@@ -32,15 +30,12 @@
       }
 
       .img-box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height:180px;
-        width:180px;
         background-color: $color-gray-light;
         overflow: hidden;
         border-radius: 50%;
         margin: 5px;
+        @include flexAlign(center);
+        @include widthHeight(180px,180px);
 
         &:hover {
           border: 1px solid $color-yellow;
@@ -72,8 +67,7 @@
     }
   }
   .product-cart-category {
-    display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    @include flexAlign(space-around);
   }
 }

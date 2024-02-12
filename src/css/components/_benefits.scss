@@ -9,8 +9,7 @@
   @include mobile {
     margin-top: 10px;
     padding: 50px 0;
-    display: flex;
-    justify-content: center;
+    @include flexAlign(center);
   }
 
   @include tablet {
@@ -19,35 +18,29 @@
 
   .container-box {
     max-width: 100%;
-    display: flex;
-    justify-content: space-between;
+    @include flexAlign(space-between);
     @include mobile {
       flex-direction: column;
       justify-content: center;
     }
     @include tablet {
-flex-wrap: wrap;
+      flex-wrap: wrap;
       justify-content: space-around;
     }
 
     .box {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      align-items: center;
+      @include flexAlign(space-around);
+      @include widthHeight(300px, 100px);
       padding: 10px 20px;
-      display: flex;
       background-color: $color-blue;
-      width: 300px;
-      height: 100px;
       border-radius: 5px;
       @include mobile {
         margin-bottom: 15px;
       }
       @include tablet {
-       margin-bottom: 20px;
-            }
-    
+        margin-bottom: 20px;
+      }
+
       .icon {
         color: $color-white;
         font-size: 40px;

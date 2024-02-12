@@ -1,8 +1,6 @@
 @import "../abstracts/variables";
 
 .item-card {
-  width: 400px;
-  height: 510px;
   text-align: center;
   padding: 1rem;
   margin-bottom: 20px;
@@ -11,6 +9,7 @@
   position: relative;
   transition: all 0.2s;
   border-radius: 10px;
+  @include widthHeight(400px, 510px);
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     .card-icons {
@@ -19,17 +18,14 @@
   }
 
   img {
-    width: 200px;
-    height: 250px;
     max-width: 15rem;
+    @include widthHeight(200px, 250px);
   }
 
   h5 {
-    font-weight: 500;
     margin: 1rem 0 1rem;
-    font-size: 14px;
     text-transform: capitalize;
-    color: $color-black;
+    @include headingStyle(14px, 500, $color-black);
   }
 
   p {
@@ -63,15 +59,12 @@
   .card-buttons {
     margin-top: 15px;
     .btn {
-      font-size: 15px;
       font-weight: 400;
       text-transform: capitalize;
       padding: 8px 12px;
       letter-spacing: 0;
-      background-color: $color-blue;
-      color: $color-white;
-      border-radius: 10px;
       margin-top: 0.5rem;
+      @include buttonStyle(15px, $color-white, $color-blue, 10px);
 
       &:hover {
         background-color: $color-yellow;
@@ -84,24 +77,18 @@
     .buttons-box {
       margin-top: 20px;
       margin-left: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      justify-items: center;
+      @include flexAlign(center);
 
       span {
         font-size: 20px;
       }
       .inc-dec {
-        font-size: 15px;
         font-weight: 400;
         text-transform: capitalize;
         padding: 4px 12px;
         letter-spacing: 0;
-        background-color: $color-blue;
-        color: $color-white;
-        border-radius: 10px;
         margin: 0 15px;
+        @include buttonStyle(15px, $color-white, $color-blue, 10px);
         &:hover {
           background-color: $color-yellow;
           color: $color-purple;
@@ -117,7 +104,6 @@
         cursor: pointer;
         &:hover {
           color: $color-yellow;
-
           transition: 0.2s;
         }
       }
@@ -125,8 +111,6 @@
   }
 
   .card-icons {
-    width: 40px;
-    height: 60px;
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -135,6 +119,7 @@
     flex-direction: column;
     transform: translateX(200%);
     transition: all 0.2s;
+    @include widthHeight(40px, 60px);
 
     a {
       font-size: 1.1rem;

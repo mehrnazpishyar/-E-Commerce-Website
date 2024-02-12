@@ -15,17 +15,17 @@ const Electronics = () => {
   } = useContext(AppContext);
 
   useEffect(() => {
-    // Filter products for the Electronic's category
+    //------ filter products for the Electronic's category-----
     const ElectronicProducts = allProducts.filter(
       (item) => item.category === "electronics"
     );
 
-    // Filter the Electronic's products based on the search query
+    //---- filter the Electronic's products based on the search query-----
     const filteredElectronicProducts = ElectronicProducts.filter((item) =>
       item.title.toLowerCase().includes(query.toLowerCase())
     );
 
-    // Update the filteredProducts state with the result
+    // ------update the filteredProducts state with the result--------
     setFilteredProducts(filteredElectronicProducts);
   }, [allProducts, query, setFilteredProducts]);
 
@@ -34,7 +34,7 @@ const Electronics = () => {
         <Link className="arrow-shop" to="/">
         <span className="go-shop">Go Home</span>
       </Link>
-      <h2>Electronic's Category</h2>
+      <h2>{`Electronic's Category`}</h2>
 
       <div className="product-cart-category">
         {isLoading ? (

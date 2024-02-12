@@ -33,16 +33,13 @@ hr {
   margin-top: 30px;
 
   .product-cart {
-    display: flex;
     flex-flow: wrap;
-    justify-content: space-around;
-    align-items: center;
+    @include flexAlign(space-around);
   }
 }
 
 .products-filter {
-  display: flex;
-  justify-content: space-around;
+  @include flexAlign(space-around);
   margin-top: 40px;
 
   @include mobile {

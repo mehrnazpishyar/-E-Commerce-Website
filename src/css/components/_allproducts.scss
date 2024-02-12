@@ -16,11 +16,9 @@
     }
 
     h2 {
-      font-size: 50px;
       letter-spacing: 1px;
       text-transform: uppercase;
-      font-weight: 300;
-      color: $color-black-light;
+      @include headingStyle(50px, 300, $color-black-light);
     }
 
     p {
@@ -41,10 +39,8 @@
         width: 170px;
         h3 {
           margin-top: 10px;
-          color: $color-purple;
-          font-size: 13px;
           text-transform: uppercase;
-          font-weight: 700;
+          @include headingStyle(13px, 700, $color-purple);
         }
 
         ul {
@@ -77,10 +73,8 @@
       margin-top: 30px;
 
       .product-cart {
-        display: flex;
+        @include flexAlign(space-around);
         flex-flow: wrap;
-        justify-content: space-around;
-        align-items: center;
       }
     }
   }
