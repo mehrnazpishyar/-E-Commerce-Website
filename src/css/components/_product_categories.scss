@@ -7,6 +7,9 @@
     color: $color-purple;
     padding: 40px;
     font-size: 40px;
+    @include mobile {
+      font-size: 25px;
+    }
   }
 
   .categories-container {
@@ -24,7 +27,7 @@
           transition: 0.2s;
         }
         @include mobile {
-          font-size: 15px;
+          font-size: 14px;
         }
       }
 
@@ -32,8 +35,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 210px;
-        width: 210px;
+        height:180px;
+        width:180px;
         background-color: $color-gray-light;
         overflow: hidden;
         border-radius: 50%;
@@ -43,8 +46,8 @@
           border: 1px solid $color-yellow;
         }
         @include mobile {
-          width: 100px;
-          height: 110px;
+          width: 90px;
+          height: 100px;
         }
         @include tablet {
           width: 140px;

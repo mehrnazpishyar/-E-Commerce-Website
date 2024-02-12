@@ -479,6 +479,11 @@ footer .footer-col .social-links a:hover {
   padding: 40px;
   font-size: 40px;
 }
+@media screen and (max-width: 768px) {
+  .categories h1 {
+    font-size: 25px;
+  }
+}
 .categories .categories-container {
   display: flex;
   justify-content: space-around;
@@ -495,15 +500,15 @@ footer .footer-col .social-links a:hover {
 }
 @media screen and (max-width: 768px) {
   .categories .categories-container .categories-card h2 {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 .categories .categories-container .categories-card .img-box {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 210px;
-  width: 210px;
+  height: 180px;
+  width: 180px;
   background-color: #efefef;
   overflow: hidden;
   border-radius: 50%;
@@ -514,8 +519,8 @@ footer .footer-col .social-links a:hover {
 }
 @media screen and (max-width: 768px) {
   .categories .categories-container .categories-card .img-box {
-    width: 100px;
-    height: 110px;
+    width: 90px;
+    height: 100px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -602,6 +607,7 @@ footer .footer-col .social-links a:hover {
 @media screen and (max-width: 768px) {
   .products .title-filter h1 {
     font-size: 18px;
+    margin-top: 60px;
   }
 }
 .products hr {
@@ -1307,6 +1313,13 @@ footer .footer-col .social-links a:hover {
   justify-content: space-between;
   gap: 1.5rem;
   margin-top: 3rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+@media screen and (max-width: 768px) {
+  .cart-container .cart-main .cart-items .cart-products {
+    flex-wrap: wrap;
+  }
 }
 .cart-container .cart-main .cart-items .cart-products .close-icon {
   font-size: 1.25rem;
@@ -1488,6 +1501,7 @@ footer .footer-col .social-links a:hover {
   margin-top: 3rem;
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
+  margin-left: 12px;
 }
 @media screen and (max-width: 768px) {
   .shopping-favorite .favorite-items .favorite-main .favorite-products {
